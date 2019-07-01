@@ -1,0 +1,8 @@
+.bundle/
+log/*.log
+pkg/
+auto_generated
+Gemfile.lock
+.DS_Store
+*.swp
+.rubocop-https---raw-githubusercontent-com-discourse-discourse-master--rubocop-yml
