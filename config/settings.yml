@@ -427,3 +427,35 @@ carbonads_plugin:
   carbonads_above_post_stream_enabled:
     client: true
     default: false
+
+gamepress_plugin:
+  community_desktop_leaderboard_a:
+    client: true
+    default: ""
+  community_desktop_leaderboard_b:
+    client: true
+    default: ""
+  community_desktop_leaderboard_c:
+    client: true
+    default: ""
+  community_desktop_leaderboard_d:
+    client: true
+    default: false
+  community_mobile_300x250_a:
+    client: true
+    default: false
+  community_mobile_300x250_b:
+    client: true
+    default: false
+  community_mobile_300x250_c:
+    client: true
+    default: false
+  community_mobile_300x250_d:
+    client: true
+    default: false
+  community_mobile_320x50_a:
+    client: true
+    default: false
+  community_mobile_320x50_b:
+    client: true
+    default: false
