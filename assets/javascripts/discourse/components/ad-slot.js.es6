@@ -53,7 +53,12 @@ const adConfig = Ember.Object.create({
       "topic-above-post-stream": "carbonads_above_post_stream_enabled",
       "topic-above-suggested": false
     }
-  }
+  },
+  "gp-ad": {
+      settingPrefix: "gp", // settings follow naming convention
+      enabledSetting: false,
+      //nthPost: "dfp_nth_post_code"
+  },
 });
 
 const displayCounts = {
