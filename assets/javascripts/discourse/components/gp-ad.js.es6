@@ -57,18 +57,18 @@ const DESKTOP_SETTINGS = {
         targeting_keys: "dfp_target_topic_list_top_key_code",
         targeting_values: "dfp_target_topic_list_top_value_code"
     },
-    "topic-above-post-stream": {
-        code: "dfp_topic_above_post_stream_code",
-        sizes: "dfp_topic_above_post_stream_ad_sizes",
-        targeting_keys: "dfp_target_topic_above_post_stream_key_code",
-        targeting_values: "dfp_target_topic_above_post_stream_value_code"
-    },
-    "topic-above-suggested": {
-        code: "dfp_topic_above_suggested_code",
-        sizes: "dfp_topic_above_suggested_ad_sizes",
-        targeting_keys: "dfp_target_topic_above_suggested_key_code",
-        targeting_values: "dfp_target_topic_above_suggested_value_code"
-    },
+    // "topic-above-post-stream": {
+    //     code: "dfp_topic_above_post_stream_code",
+    //     sizes: "dfp_topic_above_post_stream_ad_sizes",
+    //     targeting_keys: "dfp_target_topic_above_post_stream_key_code",
+    //     targeting_values: "dfp_target_topic_above_post_stream_value_code"
+    // },
+    // "topic-above-suggested": {
+    //     code: "dfp_topic_above_suggested_code",
+    //     sizes: "dfp_topic_above_suggested_ad_sizes",
+    //     targeting_keys: "dfp_target_topic_above_suggested_key_code",
+    //     targeting_values: "dfp_target_topic_above_suggested_value_code"
+    // },
     "post-bottom": {
         code: "community_desktop_leaderboard_b",
         width: 728,
@@ -86,18 +86,18 @@ const MOBILE_SETTINGS = {
         targeting_keys: "dfp_target_topic_list_top_key_code",
         targeting_values: "dfp_target_topic_list_top_value_code"
     },
-    "topic-above-post-stream": {
-        code: "dfp_mobile_topic_above_post_stream_code",
-        sizes: "dfp_mobile_topic_above_post_stream_ad_sizes",
-        targeting_keys: "dfp_target_topic_above_post_stream_key_code",
-        targeting_values: "dfp_target_topic_above_post_stream_value_code"
-    },
-    "topic-above-suggested": {
-        code: "dfp_mobile_topic_above_suggested_code",
-        sizes: "dfp_mobile_topic_above_suggested_ad_sizes",
-        targeting_keys: "dfp_target_topic_above_suggested_key_code",
-        targeting_values: "dfp_target_topic_above_suggested_value_code"
-    },
+    // "topic-above-post-stream": {
+    //     code: "dfp_mobile_topic_above_post_stream_code",
+    //     sizes: "dfp_mobile_topic_above_post_stream_ad_sizes",
+    //     targeting_keys: "dfp_target_topic_above_post_stream_key_code",
+    //     targeting_values: "dfp_target_topic_above_post_stream_value_code"
+    // },
+    // "topic-above-suggested": {
+    //     code: "dfp_mobile_topic_above_suggested_code",
+    //     sizes: "dfp_mobile_topic_above_suggested_ad_sizes",
+    //     targeting_keys: "dfp_target_topic_above_suggested_key_code",
+    //     targeting_values: "dfp_target_topic_above_suggested_value_code"
+    // },
     "post-bottom": {
         code: "community_mobile_300x250_b",
         width: 300,
@@ -123,9 +123,9 @@ function getWidthAndHeight(placement, settings, isMobile) {
 }
 
 function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
-    // if (!settings.dfp_publisher_id) {
-    //     return;
-    // }
+    if (!settings.dfp_publisher_id) {
+        return;
+    }
 
     if (ads[divId]) {
         return ads[divId];

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f5309ca-9f6b-4c31-81f4-349bb816ce58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="2" selection-start-line="56" selection-start-column="5" selection-end-line="60" selection-end-column="7" />
+            <state relative-caret-position="136">
+              <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -104,11 +104,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="59" selection-start-column="43" selection-end-column="59" />
+            <state relative-caret-position="442">
+              <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="127" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#97#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,9 +147,9 @@
       <find>adUnitClass</find>
       <find>_initGoogleDFP</find>
       <find>adNetwork</find>
-      <find>discourse-ad</find>
       <find>dfp</find>
       <find>adsense_publisher_code</find>
+      <find>discourse-ad</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,7 +162,6 @@
         <option value="$PROJECT_DIR$/config/settings.yml" />
         <option value="$PROJECT_DIR$/config/locales/client.en.yml" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/gp-ad.hbs" />
-        <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/house-ads-list-setting.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/house-ad.js.es6" />
@@ -168,6 +170,7 @@
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/carbonads-ad.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/amazon-product-links.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" />
+        <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6" />
       </list>
     </option>
   </component>
@@ -317,7 +320,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562621160684" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562621235031" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -355,12 +358,12 @@
       <workItem from="1562015720172" duration="214000" />
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
-      <workItem from="1562018502513" duration="37070000" />
+      <workItem from="1562018502513" duration="37145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39736000" />
+    <option name="totallyTimeSpent" value="39811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -622,13 +625,6 @@
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads-show.js.es6">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="59" selection-start-column="43" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/admin/plugins-house-ads.hbs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -664,8 +660,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="2" selection-start-line="56" selection-start-column="5" selection-end-line="60" selection-end-column="7" />
+        <state relative-caret-position="136">
+          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="127" selection-end-column="5" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
