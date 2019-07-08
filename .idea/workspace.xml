@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f5309ca-9f6b-4c31-81f4-349bb816ce58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +26,7 @@
         <counts>
           <entry key="Gemfile" value="2" />
           <entry key="config" value="1" />
-          <entry key="es6" value="50" />
+          <entry key="es6" value="51" />
           <entry key="hbs" value="24" />
           <entry key="iml" value="1" />
           <entry key="md" value="1" />
@@ -39,7 +39,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ECMAScript 6" value="50" />
+          <entry key="ECMAScript 6" value="51" />
           <entry key="Handlebars/Mustache" value="23" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Markdown" value="1" />
@@ -53,13 +53,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="es6" value="190" />
+          <entry key="es6" value="194" />
           <entry key="yml" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ECMAScript 6" value="190" />
+          <entry key="ECMAScript 6" value="194" />
           <entry key="YAML" value="114" />
         </counts>
       </usages-collector>
@@ -76,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+            <state relative-caret-position="969">
+              <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -100,8 +100,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="148" column="6" lean-forward="true" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
+            <state relative-caret-position="608">
+              <caret line="334" column="12" selection-start-line="334" selection-start-column="4" selection-end-line="334" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#97#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="337" column="44" lean-forward="true" selection-start-line="337" selection-start-column="44" selection-end-line="337" selection-end-column="44" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -112,15 +124,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/gp-ad.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="34">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="39" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/connectors/discovery-list-container-top/discourse-adplugin.hbs">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -138,10 +145,13 @@
       <find>place</find>
       <find>dfp_publisher_id</find>
       <find>sizes</find>
-      <find>g</find>
-      <find>adsense_publisher_code</find>
       <find>Object</find>
+      <find>dfp</find>
+      <find>adsense_publisher_code</find>
       <find>adNetwork</find>
+      <find>g</find>
+      <find>loadedGoogletag</find>
+      <find>_initGoogleDFP</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,6 +166,7 @@
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/gp-ad.hbs" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" />
+        <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6" />
       </list>
     </option>
   </component>
@@ -312,7 +323,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562616868741" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562617494885" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -350,12 +361,12 @@
       <workItem from="1562015720172" duration="214000" />
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
-      <workItem from="1562018502513" duration="32743000" />
+      <workItem from="1562018502513" duration="33409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35409000" />
+    <option name="totallyTimeSpent" value="36075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -544,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/settings.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="162" column="8" lean-forward="true" selection-start-line="162" selection-start-column="8" selection-end-line="162" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-63">
@@ -612,16 +616,6 @@
     <entry file="file://$PROJECT_DIR$/db/migrate/20190603112536_rename_site_setting_ads_txt.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="148" column="6" lean-forward="true" selection-start-line="148" selection-start-column="6" selection-end-line="148" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/codefund/topic-list-top.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -635,20 +629,27 @@
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/connectors/discovery-list-container-top/discourse-adplugin.hbs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6">
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/gp-ad.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="228" column="4" lean-forward="true" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#97#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/gp-ad.hbs">
+    <entry file="file://$PROJECT_DIR$/config/settings.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="707">
+          <caret line="162" column="8" lean-forward="true" selection-start-line="162" selection-start-column="8" selection-end-line="162" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#97#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -659,10 +660,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/gp-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+        <state relative-caret-position="608">
+          <caret line="334" column="12" selection-start-line="334" selection-start-column="4" selection-end-line="334" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="337" column="44" lean-forward="true" selection-start-line="337" selection-start-column="44" selection-end-line="337" selection-end-column="44" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>

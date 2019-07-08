@@ -333,7 +333,7 @@ export default AdComponent.extend({
       return;
     }
 
-    loadGoogle(this.siteSettings).then(() => {
+    //loadGoogle(this.siteSettings).then(() => {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
       window.googletag.cmd.push(() => {
@@ -352,7 +352,7 @@ export default AdComponent.extend({
           window.googletag.pubads().refresh([slot.ad]);
         }
       });
-    });
+    //});
   },
 
   willRender() {
