@@ -1,7 +1,7 @@
-import AdComponent from "discourse/plugins/gp_community_ads/discourse/components/ad-component";
+import AdComponent from "discourse/plugins/discourse-adplugin/discourse/components/ad-component";
 import {
-  default as computed,
-  on
+    default as computed,
+    on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
 
@@ -143,20 +143,20 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     }
 
     ad = window.googletag.defineSlot(
-        "/" + "gp" + "/" + settings[config.code],
+        /*"/" + publisherId + "/" +*/ settings[config.code],
         [size.width, size.height],
         divId
     );
 
-    custom_targeting(
-        keyParse(settings[config.targeting_keys]),
-        keyParse(settings[config.targeting_values]),
-        ad
-    );
-
-    if (categoryTarget) {
-        ad.setTargeting("discourse-category", categoryTarget);
-    }
+    // custom_targeting(
+    //     keyParse(settings[config.targeting_keys]),
+    //     keyParse(settings[config.targeting_values]),
+    //     ad
+    // );
+    //
+    // if (categoryTarget) {
+    //     ad.setTargeting("discourse-category", categoryTarget);
+    // }
 
     ad.addService(window.googletag.pubads());
 
@@ -337,7 +337,7 @@ export default AdComponent.extend({
             return;
         }
 
-        loadGoogle(this.siteSettings).then(() => {
+        //loadGoogle(this.siteSettings).then(() => {
             this.set("loadedGoogletag", true);
             this.set("lastAdRefresh", new Date());
             window.googletag.cmd.push(() => {
@@ -356,7 +356,7 @@ export default AdComponent.extend({
                     window.googletag.pubads().refresh([slot.ad]);
                 }
             });
-        });
+        //});
     },
 
     willRender() {

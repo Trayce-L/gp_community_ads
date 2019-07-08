@@ -12,7 +12,7 @@ add_admin_route 'admin.adplugin.house_ads.title', 'houseAds'
 
 module ::AdPlugin
   def self.plugin_name
-    'gp_community_ads'.freeze
+    'discourse-adplugin'.freeze
   end
 
   def self.pstore_get(key)
