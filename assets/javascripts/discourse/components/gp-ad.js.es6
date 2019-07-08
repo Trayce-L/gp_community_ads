@@ -123,9 +123,9 @@ function getWidthAndHeight(placement, settings, isMobile) {
 }
 
 function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
-    if (!settings.dfp_publisher_id) {
-        return;
-    }
+    // if (!settings.dfp_publisher_id) {
+    //     return;
+    // }
 
     if (ads[divId]) {
         return ads[divId];
@@ -244,7 +244,7 @@ export default AdComponent.extend({
 
     @computed("placement", "showAd")
     adUnitClass(placement, showAd) {
-        return showAd ? `dfp-ad-${placement}` : "";
+        return showAd ? `gp-ad-${placement}` : "";
     },
 
     @computed("width", "height")
@@ -337,7 +337,7 @@ export default AdComponent.extend({
             return;
         }
 
-        loadGoogle(this.siteSettings).then(() => {
+        //loadGoogle(this.siteSettings).then(() => {
             this.set("loadedGoogletag", true);
             this.set("lastAdRefresh", new Date());
             window.googletag.cmd.push(() => {
@@ -356,7 +356,7 @@ export default AdComponent.extend({
                     window.googletag.pubads().refresh([slot.ad]);
                 }
             });
-        });
+        //});
     },
 
     willRender() {
