@@ -1,7 +1,7 @@
 import AdComponent from "discourse/plugins/gp_community_ads/discourse/components/ad-component";
 import {
-    default as computed,
-    on
+  default as computed,
+  on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
 
@@ -123,9 +123,9 @@ function getWidthAndHeight(placement, settings, isMobile) {
 }
 
 function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
-    if (!settings.dfp_publisher_id) {
-        return;
-    }
+    // if (!settings.dfp_publisher_id) {
+    //     return;
+    // }
 
     if (ads[divId]) {
         return ads[divId];
@@ -148,15 +148,15 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
         divId
     );
 
-    // custom_targeting(
-    //     keyParse(settings[config.targeting_keys]),
-    //     keyParse(settings[config.targeting_values]),
-    //     ad
-    // );
-    //
-    // if (categoryTarget) {
-    //     ad.setTargeting("discourse-category", categoryTarget);
-    // }
+    custom_targeting(
+        keyParse(settings[config.targeting_keys]),
+        keyParse(settings[config.targeting_values]),
+        ad
+    );
+
+    if (categoryTarget) {
+        ad.setTargeting("discourse-category", categoryTarget);
+    }
 
     ad.addService(window.googletag.pubads());
 

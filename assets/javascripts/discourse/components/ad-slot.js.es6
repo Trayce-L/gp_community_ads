@@ -54,11 +54,11 @@ const adConfig = Ember.Object.create({
       "topic-above-suggested": false
     }
   },
-  // "gp-ad": {
-  //     settingPrefix: "gp", // settings follow naming convention
-  //     enabledSetting: false,
-  //     //nthPost: "dfp_nth_post_code"
-  // },
+  "gp-ad": {
+      settingPrefix: "gp", // settings follow naming convention
+      enabledSetting: false,
+      //nthPost: "dfp_nth_post_code"
+  },
 });
 
 const displayCounts = {
