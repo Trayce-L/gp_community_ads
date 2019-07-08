@@ -56,7 +56,7 @@ const adConfig = Ember.Object.create({
   },
   "gp-ad": {
       settingPrefix: "gp", // settings follow naming convention
-      enabledSetting: false,
+      enabledSetting: true,
       //nthPost: "dfp_nth_post_code"
   },
 });
