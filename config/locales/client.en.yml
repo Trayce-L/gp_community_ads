@@ -12,7 +12,7 @@ en:
           amazon_plugin: 'Amazon'
           codefund_plugin: 'CodeFund'
           carbonads_plugin: 'Carbon Ads'
-          gamepress_plugin: 'GamePress Ads'
+          community_plugin: 'GamePress Ads'
       adplugin:
         house_ads:
           title: "House Ads"

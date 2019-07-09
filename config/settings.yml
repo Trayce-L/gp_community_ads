@@ -428,7 +428,7 @@ carbonads_plugin:
     client: true
     default: false
 
-gamepress_plugin:
+community_plugin:
   community_desktop_leaderboard_a:
     client: true
     default: ""

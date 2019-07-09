@@ -54,10 +54,22 @@ const adConfig = Ember.Object.create({
       "topic-above-suggested": false
     }
   },
-  "gp-ad": {
-      settingPrefix: "gp", // settings follow naming convention
+  "community-ad": {
+      settingPrefix: "community", // settings follow naming convention
       enabledSetting: false,
-      //nthPost: "dfp_nth_post_code"
+      //nthPost: "",
+      desktop: {
+          "topic-list-top": "community_desktop_leaderboard_a",
+          "post-bottom": "",
+          "topic-above-post-stream": "",
+          "topic-above-suggested": "community_desktop_leaderboard_b"
+      },
+      mobile: {
+          "topic-list-top": "community_mobile_300x250_a",
+          "post-bottom": "",
+          "topic-above-post-stream": "",
+          "topic-above-suggested": "community_mobile_300x250_b"
+      }
   },
 });
 
