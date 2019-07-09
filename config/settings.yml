@@ -429,6 +429,9 @@ carbonads_plugin:
     default: false
 
 community_plugin:
+  community_id:
+    client: true
+    default: "1"
   community_topic_list_top_code:
     client: true
     default: ""
