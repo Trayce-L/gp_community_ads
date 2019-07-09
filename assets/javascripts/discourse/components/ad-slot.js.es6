@@ -60,15 +60,15 @@ const adConfig = Ember.Object.create({
       //nthPost: "",
       desktop: {
           "topic-list-top": "community_desktop_leaderboard_a",
-          "post-bottom": "",
-          "topic-above-post-stream": "",
-          "topic-above-suggested": "community_desktop_leaderboard_b"
+          "post-bottom": "community_desktop_leaderboard_b",
+          "topic-above-post-stream": undefined,
+          "topic-above-suggested": undefined
       },
       mobile: {
           "topic-list-top": "community_mobile_300x250_a",
-          "post-bottom": "",
-          "topic-above-post-stream": "",
-          "topic-above-suggested": "community_mobile_300x250_b"
+          "post-bottom":  "community_mobile_300x250_b",
+          "topic-above-post-stream": undefined,
+          "topic-above-suggested": undefined
       }
   },
 });
