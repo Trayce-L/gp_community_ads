@@ -249,10 +249,10 @@ export default AdComponent.extend({
     adcode(placement, isMobile){
         if (isMobile) {
             //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
-            return MOBILE_SETTINGS[placement].code;
+            return settings[MOBILE_SETTINGS[placement].code];
         } else {
             //publisherId = settings.dfp_publisher_id;
-            return DESKTOP_SETTINGS[placement].code;
+            return settings[DESKTOP_SETTINGS[placement].code];
         }
     },
 
