@@ -239,9 +239,9 @@ export default AdComponent.extend({
     divId(placement, postNumber) {
         let slotNum = getNextSlotNum();
         if (postNumber) {
-            return `div-gp-ad-${slotNum}-${placement}-${postNumber}`;
+            return settings[MOBILE_SETTINGS[placement].code];//`div-gp-ad-${slotNum}-${placement}-${postNumber}`;
         } else {
-            return `div-gp-ad-${slotNum}-${placement}`;
+            return settings[MOBILE_SETTINGS[placement].code];//`div-gp-ad-${slotNum}-${placement}`;
         }
     },
 
