@@ -51,59 +51,63 @@ function custom_targeting(key_array, value_array, adSlot) {
 
 const DESKTOP_SETTINGS = {
     "topic-list-top": {
-        code: "community_desktop_leaderboard_a",
+        code: "community_topic_list_top_code",
         width: 728,
         height: 90,
-        targeting_keys: "dfp_target_topic_list_top_key_code",
-        targeting_values: "dfp_target_topic_list_top_value_code"
+        targeting_keys: "",
+        targeting_values: ""
     },
-    // "topic-above-post-stream": {
-    //     code: "dfp_topic_above_post_stream_code",
-    //     sizes: "dfp_topic_above_post_stream_ad_sizes",
-    //     targeting_keys: "dfp_target_topic_above_post_stream_key_code",
-    //     targeting_values: "dfp_target_topic_above_post_stream_value_code"
-    // },
-    // "topic-above-suggested": {
-    //     code: "dfp_topic_above_suggested_code",
-    //     sizes: "dfp_topic_above_suggested_ad_sizes",
-    //     targeting_keys: "dfp_target_topic_above_suggested_key_code",
-    //     targeting_values: "dfp_target_topic_above_suggested_value_code"
-    // },
-    "post-bottom": {
-        code: "community_desktop_leaderboard_b",
+    "topic-above-post-stream": {
+        code: "community_topic_above_post_stream_code",
         width: 728,
         height: 90,
-        targeting_keys: "dfp_target_post_bottom_key_code",
-        targeting_values: "dfp_target_post_bottom_value_code"
+        targeting_keys: "",
+        targeting_values: ""
+    },
+    "topic-above-suggested": {
+        code: "community_topic_above_suggested_code",
+        width: 728,
+        height: 90,
+        targeting_keys: "",
+        targeting_values: ""
+    },
+    "post-bottom": {
+        code: "community_post_bottom_code",
+        width: 728,
+        height: 90,
+        targeting_keys: "",
+        targeting_values: ""
     }
 };
 
 const MOBILE_SETTINGS = {
     "topic-list-top": {
-        code: "community_mobile_300x250_a",
+        code: "community_mobile_topic_list_top_code",
         width: 300,
         height: 250,
-        targeting_keys: "dfp_target_topic_list_top_key_code",
-        targeting_values: "dfp_target_topic_list_top_value_code"
+        targeting_keys: "",
+        targeting_values: ""
     },
-    // "topic-above-post-stream": {
-    //     code: "dfp_mobile_topic_above_post_stream_code",
-    //     sizes: "dfp_mobile_topic_above_post_stream_ad_sizes",
-    //     targeting_keys: "dfp_target_topic_above_post_stream_key_code",
-    //     targeting_values: "dfp_target_topic_above_post_stream_value_code"
-    // },
-    // "topic-above-suggested": {
-    //     code: "dfp_mobile_topic_above_suggested_code",
-    //     sizes: "dfp_mobile_topic_above_suggested_ad_sizes",
-    //     targeting_keys: "dfp_target_topic_above_suggested_key_code",
-    //     targeting_values: "dfp_target_topic_above_suggested_value_code"
-    // },
-    "post-bottom": {
-        code: "community_mobile_300x250_b",
+    "topic-above-post-stream": {
+        code: "community_mobile_topic_above_post_stream_code",
         width: 300,
         height: 250,
-        targeting_keys: "dfp_target_post_bottom_key_code",
-        targeting_values: "dfp_target_post_bottom_value_code"
+        targeting_keys: "",
+        targeting_values: ""
+    },
+    "topic-above-suggested": {
+        code: "community_mobile_topic_above_suggested_code",
+        width: 300,
+        height: 250,
+        targeting_keys: "",
+        targeting_values: ""
+    },
+    "post-bottom": {
+        code: "community_mobile_post_bottom_code",
+        width: 300,
+        height: 250,
+        targeting_keys: "",
+        targeting_values: ""
     }
 };
 
@@ -171,57 +175,56 @@ function destroySlot(divId) {
     }
 }
 
-function loadGoogle() {
-    /**
-     * Refer to this article for help:
-     * https://support.google.com/admanager/answer/4578089?hl=en
-     */
-
-    if (_loaded) {
-        return Ember.RSVP.resolve();
-    }
-
-    if (_promise) {
-        return _promise;
-    }
-
-    // The boilerplate code
-    var dfpSrc =
-        ("https:" === document.location.protocol ? "https:" : "http:") +
-        "//www.googletagservices.com/tag/js/gpt.js";
-    _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
-        _loaded = true;
-        if (window.googletag === undefined) {
-            // eslint-disable-next-line no-console
-            console.log("googletag is undefined!");
-        }
-
-        window.googletag.cmd.push(function() {
-            // Infinite scroll requires SRA:
-            window.googletag.pubads().enableSingleRequest();
-
-            // we always use refresh() to fetch the ads:
-            window.googletag.pubads().disableInitialLoad();
-
-            window.googletag.enableServices();
-        });
-    });
-
-    window.googletag = window.googletag || { cmd: [] };
-
-    return _promise;
-}
+// function loadGoogle() {
+//     /**
+//      * Refer to this article for help:
+//      * https://support.google.com/admanager/answer/4578089?hl=en
+//      */
+//
+//     if (_loaded) {
+//         return Ember.RSVP.resolve();
+//     }
+//
+//     if (_promise) {
+//         return _promise;
+//     }
+//
+//     // The boilerplate code
+//     var dfpSrc =
+//         ("https:" === document.location.protocol ? "https:" : "http:") +
+//         "//www.googletagservices.com/tag/js/gpt.js";
+//     _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
+//         _loaded = true;
+//         if (window.googletag === undefined) {
+//             // eslint-disable-next-line no-console
+//             console.log("googletag is undefined!");
+//         }
+//
+//         window.googletag.cmd.push(function() {
+//             // Infinite scroll requires SRA:
+//             window.googletag.pubads().enableSingleRequest();
+//
+//             // we always use refresh() to fetch the ads:
+//             window.googletag.pubads().disableInitialLoad();
+//
+//             window.googletag.enableServices();
+//         });
+//     });
+//
+//     window.googletag = window.googletag || { cmd: [] };
+//
+//     return _promise;
+// }
 
 export default AdComponent.extend({
     classNameBindings: ["adUnitClass"],
-    classNames: ["gp-ad"],
-    loadedGoogletag: false,
+    classNames: ["community-ad"],
     refreshOnChange: null,
     lastAdRefresh: null,
 
     @computed(
-        "siteSettings.dfp_publisher_id",
-        "siteSettings.dfp_publisher_id_mobile",
+        "siteSettings.community_id",
+        "siteSettings.community_id",
         "site.mobileView"
     )
     publisherId(globalId, mobileId, isMobile) {
@@ -236,15 +239,15 @@ export default AdComponent.extend({
     divId(placement, postNumber) {
         let slotNum = getNextSlotNum();
         if (postNumber) {
-            return `div-gpt-ad-${slotNum}-${placement}-${postNumber}`;
+            return `div-gp-ad-${slotNum}-${placement}-${postNumber}`;
         } else {
-            return `div-gpt-ad-${slotNum}-${placement}`;
+            return `div-gp-ad-${slotNum}-${placement}`;
         }
     },
 
     @computed("placement", "showAd")
     adUnitClass(placement, showAd) {
-        return showAd ? `gp-ad-${placement}` : "";
+        return showAd ? `community-ad-${placement}` : "";
     },
 
     @computed("width", "height")
@@ -321,14 +324,14 @@ export default AdComponent.extend({
         let ad = slot.ad,
             categorySlug = this.get("currentCategorySlug");
 
-        if (this.get("loadedGoogletag")) {
+        //if (this.get("loadedGoogletag")) {
             // console.log(`refresh(${this.get("divId")}) from updated()`);
             this.set("lastAdRefresh", new Date());
             window.googletag.cmd.push(() => {
                 ad.setTargeting("discourse-category", categorySlug || "0");
                 window.googletag.pubads().refresh([ad]);
             });
-        }
+        //}
     },
 
     @on("didInsertElement")
