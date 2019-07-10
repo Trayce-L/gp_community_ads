@@ -245,6 +245,17 @@ export default AdComponent.extend({
         }
     },
 
+    @computed("placement", "site.mobileView")
+    adcode(placement, isMobile){
+        if (isMobile) {
+            //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
+            return MOBILE_SETTINGS[placement];
+        } else {
+            //publisherId = settings.dfp_publisher_id;
+            return DESKTOP_SETTINGS[placement];
+        }
+    },
+
     @computed("placement", "showAd")
     adUnitClass(placement, showAd) {
         return showAd ? `community-ad-${placement}` : "";
