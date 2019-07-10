@@ -102,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="801">
-              <caret line="256" column="6" lean-forward="true" selection-start-line="256" selection-start-column="6" selection-end-line="256" selection-end-column="6" />
+            <state relative-caret-position="855">
+              <caret line="248" column="10" selection-start-line="248" selection-start-column="4" selection-end-line="248" selection-end-column="10" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -114,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="340">
+              <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -152,11 +152,11 @@
       <find>community</find>
       <find>showAd</find>
       <find>dfp-ad-</find>
-      <find>sitese</find>
       <find>community-ad-</find>
       <find>adWrapperStyle</find>
-      <find>divId</find>
       <find>MOBILE_SETTINGS</find>
+      <find>sitese</find>
+      <find>divId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,8 +180,8 @@
         <option value="$PROJECT_DIR$/config/locales/client.en.yml" />
         <option value="$PROJECT_DIR$/config/settings.yml" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" />
-        <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" />
+        <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs" />
       </list>
     </option>
   </component>
@@ -331,7 +331,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562788034059" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562788259050" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -369,12 +369,12 @@
       <workItem from="1562015720172" duration="214000" />
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
-      <workItem from="1562018502513" duration="63770000" />
+      <workItem from="1562018502513" duration="63995000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66436000" />
+    <option name="totallyTimeSpent" value="66661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -670,20 +670,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="801">
-          <caret line="256" column="6" lean-forward="true" selection-start-line="256" selection-start-column="6" selection-end-line="256" selection-end-column="6" />
+        <state relative-caret-position="855">
+          <caret line="248" column="10" selection-start-line="248" selection-start-column="4" selection-end-line="248" selection-end-column="10" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
         </state>
       </provider>
     </entry>

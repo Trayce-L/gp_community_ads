@@ -2,18 +2,18 @@
     {{#if site.mobileView}}
         <!--<div class="google-dfp-ad-label" style={{adTitleStyleMobile}}><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>-->
         <!--<div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center></div>-->
-        <div id={{divId}}>
+        <div id={{adcode}}>
             <script>
-                if(detectWidth() > 980) { googletag.cmd.push(function() { googletag.display({{divId}}); }); }
+                if(detectWidth() > 980) { googletag.cmd.push(function() { googletag.display({{adcode}}); }); }
             </script>
         </div>
         <h3>Test</h3>
     {{else}}
         <!--<div class="google-dfp-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>-->
         <!--<div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center></div>-->
-        <div id={{divId}}>
+        <div id={{adcode}}>
             <script>
-                if(detectWidth() > 980) { googletag.cmd.push(function() { googletag.display({{divId}}); }); }
+                if(detectWidth() > 980) { googletag.cmd.push(function() { googletag.display({{adcode}}); }); }
             </script>
         </div>
         <h3>Test</h3>
