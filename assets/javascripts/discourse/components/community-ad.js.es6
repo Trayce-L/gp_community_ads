@@ -241,7 +241,7 @@ export default AdComponent.extend({
         if (postNumber) {
             return `div-ad-${slotNum}-${placement}-${postNumber}`;
         } else {
-            return this.adcode(placement, isMobile);//'' . DESKTOP_SETTINGS[placement].code;//`div-ad-${slotNum}-${placement}`;
+            return `${DESKTOP_SETTINGS[placement].code}`;//`div-ad-${slotNum}-${placement}`;
         }
     },
 
