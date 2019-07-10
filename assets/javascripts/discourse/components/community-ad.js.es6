@@ -241,25 +241,25 @@ export default AdComponent.extend({
         if (postNumber) {
             return `div-ad-${slotNum}-${placement}-${postNumber}`;
         } else {
-            return `${DESKTOP_SETTINGS[placement].code}`;//`div-ad-${slotNum}-${placement}`;
+            //return `${DESKTOP_SETTINGS[placement].code}`;//`div-ad-${slotNum}-${placement}`;
             if (isMobile) {
                 //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
                 //return settings[MOBILE_SETTINGS[placement].code];
                 if(placement === "topic-list-top")
                 {
-                    return `${this.siteSettings.community_mobile_topic_list_top_code.value}`;
+                    return `${this.siteSettings.community_mobile_topic_list_top_code}`;
                 }
                 if(placement === "topic-above-post-stream")
                 {
-                    return `${this.siteSettings.community_mobile_topic_above_post_stream_code.value}`;
+                    return `${this.siteSettings.community_mobile_topic_above_post_stream_code}`;
                 }
                 if(placement === "topic-above-suggested")
                 {
-                    return `${this.siteSettings.community_mobile_topic_above_suggested_code.value}`;
+                    return `${this.siteSettings.community_mobile_topic_above_suggested_code}`;
                 }
                 if(placement === "post-bottom")
                 {
-                    return `${this.siteSettings.community_mobile_post_bottom_code.value}`;
+                    return `${this.siteSettings.community_mobile_post_bottom_code}`;
                 }
 
             } else {
@@ -283,52 +283,6 @@ export default AdComponent.extend({
                 }
             }
         }
-    },
-
-    @computed("placement", "site.mobileView")
-    adcode(placement, isMobile){
-        if (isMobile) {
-            //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
-            //return settings[MOBILE_SETTINGS[placement].code];
-            if(placement === "topic-list-top")
-            {
-                return '' . this.siteSettings.community_mobile_topic_list_top_code;
-            }
-            if(placement === "topic-above-post-stream")
-            {
-                return '' . this.siteSettings.community_mobile_topic_above_post_stream_code;
-            }
-            if(placement === "topic-above-suggested")
-            {
-                return '' . this.siteSettings.community_mobile_topic_above_suggested_code;
-            }
-            if(placement === "post-bottom")
-            {
-                return '' . this.siteSettings.community_mobile_post_bottom_code;
-            }
-
-        } else {
-            //publisherId = settings.dfp_publisher_id;
-            //return settings[DESKTOP_SETTINGS[placement].code];
-            if(placement === "topic-list-top")
-            {
-                return '' . this.siteSettings.community_topic_list_top_code;
-            }
-            if(placement === "topic-above-post-stream")
-            {
-                return '' . this.siteSettings.community_topic_above_post_stream_code;
-            }
-            if(placement === "topic-above-suggested")
-            {
-                return '' . this.siteSettings.community_topic_above_suggested_code;
-            }
-            if(placement === "post-bottom")
-            {
-                return '' . this.siteSettings.community_post_bottom_code;
-            }
-        }
-
-        return '';
     },
 
     @computed("placement", "showAd")
