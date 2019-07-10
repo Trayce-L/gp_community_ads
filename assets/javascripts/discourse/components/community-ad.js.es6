@@ -235,13 +235,13 @@ export default AdComponent.extend({
         }
     },
 
-    @computed("placement", "postNumber")
-    divId(placement, postNumber) {
+    @computed("placement", "postNumber", "site.mobileView")
+    divId(placement, postNumber, isMobile) {
         let slotNum = getNextSlotNum();
         if (postNumber) {
             return `div-ad-${slotNum}-${placement}-${postNumber}`;
         } else {
-            return '' . settings[DESKTOP_SETTINGS[placement].code];//`div-ad-${slotNum}-${placement}`;
+            return adcode(placement, isMobile);//'' . DESKTOP_SETTINGS[placement].code;//`div-ad-${slotNum}-${placement}`;
         }
     },
 
@@ -250,9 +250,42 @@ export default AdComponent.extend({
         if (isMobile) {
             //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
             //return settings[MOBILE_SETTINGS[placement].code];
+            if(placement === "topic-list-top")
+            {
+                return settings.community_mobile_topic_list_top_code;
+            }
+            if(placement === "topic-above-post-stream")
+            {
+                return settings.community_mobile_topic_above_post_stream_code;
+            }
+            if(placement === "topic-above-suggested")
+            {
+                return settings.community_mobile_topic_above_suggested_code;
+            }
+            if(placement === "post-bottom")
+            {
+                return settings.community_mobile_post_bottom_code;
+            }
+
         } else {
             //publisherId = settings.dfp_publisher_id;
             //return settings[DESKTOP_SETTINGS[placement].code];
+            if(placement === "topic-list-top")
+            {
+                return settings.community_topic_list_top_code;
+            }
+            if(placement === "topic-above-post-stream")
+            {
+                return settings.community_topic_above_post_stream_code;
+            }
+            if(placement === "topic-above-suggested")
+            {
+                return settings.community_topic_above_suggested_code;
+            }
+            if(placement === "post-bottom")
+            {
+                return settings.community_post_bottom_code;
+            }
         }
     },
 
