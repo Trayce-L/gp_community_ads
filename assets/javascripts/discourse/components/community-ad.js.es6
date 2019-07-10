@@ -252,19 +252,19 @@ export default AdComponent.extend({
             //return settings[MOBILE_SETTINGS[placement].code];
             if(placement === "topic-list-top")
             {
-                return settings.community_mobile_topic_list_top_code;
+                return this.siteSettings.community_mobile_topic_list_top_code;
             }
             if(placement === "topic-above-post-stream")
             {
-                return settings.community_mobile_topic_above_post_stream_code;
+                return this.siteSettings.community_mobile_topic_above_post_stream_code;
             }
             if(placement === "topic-above-suggested")
             {
-                return settings.community_mobile_topic_above_suggested_code;
+                return this.siteSettings.community_mobile_topic_above_suggested_code;
             }
             if(placement === "post-bottom")
             {
-                return settings.community_mobile_post_bottom_code;
+                return this.siteSettings.community_mobile_post_bottom_code;
             }
 
         } else {
@@ -272,19 +272,19 @@ export default AdComponent.extend({
             //return settings[DESKTOP_SETTINGS[placement].code];
             if(placement === "topic-list-top")
             {
-                return settings.community_topic_list_top_code;
+                return this.siteSettings.community_topic_list_top_code;
             }
             if(placement === "topic-above-post-stream")
             {
-                return settings.community_topic_above_post_stream_code;
+                return this.siteSettings.community_topic_above_post_stream_code;
             }
             if(placement === "topic-above-suggested")
             {
-                return settings.community_topic_above_suggested_code;
+                return this.siteSettings.community_topic_above_suggested_code;
             }
             if(placement === "post-bottom")
             {
-                return settings.community_post_bottom_code;
+                return this.siteSettings.community_post_bottom_code;
             }
         }
     },
