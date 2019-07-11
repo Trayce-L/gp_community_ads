@@ -417,7 +417,7 @@ export default AdComponent.extend({
             return;
         }
 
-        loadGoogle(this.siteSettings).then(() => {
+        //loadGoogle(this.siteSettings).then(() => {
             loadBid(this.siteSettings).then(() => {
                 this.set("loadedGoogletag", true);
                 this.set("lastAdRefresh", new Date());
@@ -438,7 +438,7 @@ export default AdComponent.extend({
                     }
                 });
             });
-        });
+        //});
     },
 
     willRender() {
