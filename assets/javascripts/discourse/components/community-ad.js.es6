@@ -230,7 +230,7 @@ function loadBid() {
 
     // The boilerplate code
     var dfpSrc = "https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
-    _promise = loadScript(dfpSrc, { scriptTag: false }).then(function() {
+    _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
         _loaded = true;
         if (window.googletag === undefined) {
             // eslint-disable-next-line no-console
@@ -401,14 +401,14 @@ export default AdComponent.extend({
         let ad = slot.ad,
             categorySlug = this.get("currentCategorySlug");
 
-        //if (this.get("loadedGoogletag")) {
-            // console.log(`refresh(${this.get("divId")}) from updated()`);
+        if (this.get("loadedGoogletag")) {
+            console.log(`refresh(${this.get("divId")}) from updated()`);
             this.set("lastAdRefresh", new Date());
             window.googletag.cmd.push(() => {
                 ad.setTargeting("discourse-category", categorySlug || "0");
                 window.googletag.pubads().refresh([ad]);
             });
-        //}
+        }
     },
 
     @on("didInsertElement")
@@ -418,7 +418,7 @@ export default AdComponent.extend({
         }
 
         loadGoogle(this.siteSettings).then(() => {
-            //loadBid(this.siteSettings).then(() => {
+            loadBid(this.siteSettings).then(() => {
                 this.set("loadedGoogletag", true);
                 this.set("lastAdRefresh", new Date());
                 window.googletag.cmd.push(() => {
@@ -437,7 +437,7 @@ export default AdComponent.extend({
                         window.googletag.pubads().refresh([slot.ad]);
                     }
                 });
-            //});
+            });
         });
     },
 
