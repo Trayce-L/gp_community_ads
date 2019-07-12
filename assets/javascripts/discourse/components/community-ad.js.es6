@@ -152,15 +152,15 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     divId
   );
 
-  // custom_targeting(
-  //     keyParse(settings[config.targeting_keys]),
-  //     keyParse(settings[config.targeting_values]),
-  //     ad
-  // );
-  //
-  // if (categoryTarget) {
-  //     ad.setTargeting("discourse-category", categoryTarget);
-  // }
+  custom_targeting(
+      keyParse(settings[config.targeting_keys]),
+      keyParse(settings[config.targeting_values]),
+      ad
+  );
+
+  if (categoryTarget) {
+      ad.setTargeting("discourse-category", categoryTarget);
+  }
 
   ad.addService(window.googletag.pubads());
 
@@ -216,85 +216,85 @@ function loadGoogle() {
   return _promise;
 }
 
-// function loadCommunity() {
-//   /**
-//    * Refer to this article for help:
-//    * https://support.google.com/admanager/answer/4578089?hl=en
-//    */
-//
-//   if (_loaded) {
-//     return Ember.RSVP.resolve();
-//   }
-//
-//   if (_promise) {
-//     return _promise;
-//   }
-//
-//   // The boilerplate code
-//   var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
-//     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-//   _promise = loadScript(communitySrc, {scriptTag: true}).then(function () {
-//     _loaded = true;
-//     // if (window.googletag === undefined) {
-//     //   // eslint-disable-next-line no-console
-//     //   console.log("googletag is undefined!");
-//     // }
-//     //
-//     // window.googletag.cmd.push(function () {
-//     //   // Infinite scroll requires SRA:
-//     //   window.googletag.pubads().enableSingleRequest();
-//     //
-//     //   // we always use refresh() to fetch the ads:
-//     //   window.googletag.pubads().disableInitialLoad();
-//     //
-//     //   window.googletag.enableServices();
-//     //});
-//   });
-//
-//   //window.googletag = window.googletag || {cmd: []};
-//
-//   return _promise;
-// }
-//
-// function loadBid() {
-//   /**
-//    * Refer to this article for help:
-//    * https://support.google.com/admanager/answer/4578089?hl=en
-//    */
-//
-//   if (_loaded) {
-//     return Ember.RSVP.resolve();
-//   }
-//
-//   if (_promise) {
-//     return _promise;
-//   }
-//
-//   // The boilerplate code
-//   var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
-//     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
-//   _promise = loadScript(bidSrc, {scriptTag: true}).then(function () {
-//     _loaded = true;
-//     // if (window.googletag === undefined) {
-//     //   // eslint-disable-next-line no-console
-//     //   console.log("prebid is undefined!");
-//     // }
-//     //
-//     // window.googletag.cmd.push(function () {
-//     //   // Infinite scroll requires SRA:
-//     //   window.googletag.pubads().enableSingleRequest();
-//     //
-//     //   // we always use refresh() to fetch the ads:
-//     //   window.googletag.pubads().disableInitialLoad();
-//     //
-//     //   window.googletag.enableServices();
-//     // });
-//   });
-//
-//   //window.googletag = window.googletag || {cmd: []};
-//
-//   return _promise;
-// }
+function loadCommunity() {
+  /**
+   * Refer to this article for help:
+   * https://support.google.com/admanager/answer/4578089?hl=en
+   */
+
+  if (_loaded) {
+    return Ember.RSVP.resolve();
+  }
+
+  if (_promise) {
+    return _promise;
+  }
+
+  // The boilerplate code
+  var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+    "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+  _promise = loadScript(communitySrc, {scriptTag: true}).then(function () {
+    _loaded = true;
+    // if (window.googletag === undefined) {
+    //   // eslint-disable-next-line no-console
+    //   console.log("googletag is undefined!");
+    // }
+    //
+    // window.googletag.cmd.push(function () {
+    //   // Infinite scroll requires SRA:
+    //   window.googletag.pubads().enableSingleRequest();
+    //
+    //   // we always use refresh() to fetch the ads:
+    //   window.googletag.pubads().disableInitialLoad();
+    //
+    //   window.googletag.enableServices();
+    //});
+  });
+
+  //window.googletag = window.googletag || {cmd: []};
+
+  return _promise;
+}
+
+function loadBid() {
+  /**
+   * Refer to this article for help:
+   * https://support.google.com/admanager/answer/4578089?hl=en
+   */
+
+  if (_loaded) {
+    return Ember.RSVP.resolve();
+  }
+
+  if (_promise) {
+    return _promise;
+  }
+
+  // The boilerplate code
+  var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+    "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
+  _promise = loadScript(bidSrc, {scriptTag: true}).then(function () {
+    _loaded = true;
+    // if (window.googletag === undefined) {
+    //   // eslint-disable-next-line no-console
+    //   console.log("prebid is undefined!");
+    // }
+    //
+    // window.googletag.cmd.push(function () {
+    //   // Infinite scroll requires SRA:
+    //   window.googletag.pubads().enableSingleRequest();
+    //
+    //   // we always use refresh() to fetch the ads:
+    //   window.googletag.pubads().disableInitialLoad();
+    //
+    //   window.googletag.enableServices();
+    // });
+  });
+
+  //window.googletag = window.googletag || {cmd: []};
+
+  return _promise;
+}
 
 export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
@@ -453,7 +453,7 @@ export default AdComponent.extend({
     //     return;
     // }
 
-      // loadGoogle(this.siteSettings).then(() => {
+      loadCommunity(this.siteSettings).then(() => {
     //   loadBid(this.siteSettings).then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
@@ -474,7 +474,7 @@ export default AdComponent.extend({
           }
         });
     //   });
-    //  });
+     });
   },
 
   willRender() {
