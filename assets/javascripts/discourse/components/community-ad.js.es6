@@ -209,7 +209,7 @@ function loadGoogle() {
         // });
     });
 
-    window.googletag = window.googletag || { cmd: [] };
+    //window.googletag = window.googletag || { cmd: [] };
 
     return _promise;
 }
@@ -248,7 +248,7 @@ function loadBid() {
         // });
     });
 
-    window.googletag = window.googletag || { cmd: [] };
+    //window.googletag = window.googletag || { cmd: [] };
 
     return _promise;
 }
