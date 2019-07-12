@@ -180,6 +180,13 @@ function loadGoogle() {
      * Refer to this article for help:
      * https://support.google.com/admanager/answer/4578089?hl=en
      */
+    const head = document.getElementsByTagName("head")[0];
+
+    let finished = false;
+    let s = document.createElement("script");
+
+
+    head.appendChild(s);
 
     if (_loaded) {
         return Ember.RSVP.resolve();
@@ -190,9 +197,24 @@ function loadGoogle() {
     }
 
     // The boilerplate code
-    var dfpSrc = "https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-    _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
+    //var dfpSrc = "https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+    _promise = /*loadScript(dfpSrc, { scriptTag: true }).then(*/function() {
         _loaded = true;
+
+        s.src = "https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+
+        s.onload = s.onreadystatechange = function(_, abort) {
+            finished = true;
+            if (
+                abort ||
+                !s.readyState ||
+                s.readyState === "loaded" ||
+                s.readyState === "complete"
+            ) {
+                s = s.onload = s.onreadystatechange = null;
+            }
+        };
+
         // if (window.googletag === undefined) {
         //     // eslint-disable-next-line no-console
         //     console.log("googletag is undefined!");
@@ -207,9 +229,9 @@ function loadGoogle() {
         //
         //     window.googletag.enableServices();
         // });
-    });
+    };//);
 
-    window.googletag = window.googletag || { cmd: [] };
+    //window.googletag = window.googletag || { cmd: [] };
 
     return _promise;
 }
