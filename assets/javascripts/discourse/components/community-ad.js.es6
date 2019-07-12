@@ -190,7 +190,8 @@ function loadGoogle() {
   }
 
   // The boilerplate code
-  var dfpSrc = "https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+  var dfpSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+    "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
   _promise = loadScript(dfpSrc, {scriptTag: true}).then(function () {
     _loaded = true;
     if (window.googletag === undefined) {
@@ -229,7 +230,8 @@ function loadBid() {
   }
 
   // The boilerplate code
-  var dfpSrc = "https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
+  var dfpSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+    "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
   _promise = loadScript(dfpSrc, {scriptTag: true}).then(function () {
     _loaded = true;
     if (window.googletag === undefined) {
@@ -256,6 +258,7 @@ function loadBid() {
 export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
   classNames: ["community-ad"],
+  loadedGoogletag: false,
   refreshOnChange: null,
   lastAdRefresh: null,
 
@@ -394,7 +397,7 @@ export default AdComponent.extend({
       categorySlug = this.get("currentCategorySlug");
 
     if (this.get("loadedGoogletag")) {
-      console.log(`refresh(${this.get("divId")}) from updated()`);
+      //console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
       window.googletag.cmd.push(() => {
         //ad.setTargeting("discourse-category", categorySlug || "0");
@@ -408,8 +411,6 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
-
-    console.error('here');
 
     loadGoogle(this.siteSettings).then(() => {
       loadBid(this.siteSettings).then(() => {
