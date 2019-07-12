@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f5309ca-9f6b-4c31-81f4-349bb816ce58" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +43,7 @@
         <counts>
           <entry key="Gemfile" value="2" />
           <entry key="config" value="1" />
-          <entry key="es6" value="111" />
+          <entry key="es6" value="112" />
           <entry key="hbs" value="41" />
           <entry key="html" value="1" />
           <entry key="iml" value="1" />
@@ -56,7 +58,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ECMAScript 6" value="111" />
+          <entry key="ECMAScript 6" value="112" />
           <entry key="HTML" value="1" />
           <entry key="Handlebars/Mustache" value="40" />
           <entry key="IDEA_MODULE" value="1" />
@@ -72,14 +74,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="es6" value="826" />
+          <entry key="es6" value="832" />
           <entry key="hbs" value="49" />
           <entry key="yml" value="133" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ECMAScript 6" value="826" />
+          <entry key="ECMAScript 6" value="832" />
           <entry key="Handlebars/Mustache" value="49" />
           <entry key="YAML" value="133" />
         </counts>
@@ -91,26 +93,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/settings.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7327">
-              <caret line="431" column="14" selection-start-line="431" selection-start-column="2" selection-end-line="431" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+            <state relative-caret-position="954">
+              <caret line="462" column="45" selection-start-line="462" selection-start-column="2" selection-end-line="462" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="70" column="79" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="446" column="51" lean-forward="true" selection-start-line="445" selection-start-column="7" selection-end-line="446" selection-end-column="51" />
+            <state relative-caret-position="969">
+              <caret line="216" column="20" lean-forward="true" selection-start-line="216" selection-start-column="20" selection-end-line="216" selection-end-column="20" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -207,9 +209,9 @@
         <option value="$PROJECT_DIR$/plugin.rb" />
         <option value="$PROJECT_DIR$/config/locales/client.en.yml" />
         <option value="$PROJECT_DIR$/config/settings.yml" />
-        <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" />
+        <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" />
       </list>
     </option>
   </component>
@@ -339,10 +341,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562964369920" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562966562538" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -363,6 +366,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="community-ad.js.es6" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="community-ad.js.es6" working-dir="$PROJECT_DIR$/assets/javascripts/discourse/components">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.community-ad.js.es6" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -378,12 +391,12 @@
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
       <workItem from="1562018502513" duration="73660000" />
-      <workItem from="1562858960699" duration="8416000" />
+      <workItem from="1562858960699" duration="10319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84742000" />
+    <option name="totallyTimeSpent" value="86645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -399,7 +412,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39969015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -489,6 +502,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -575,13 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="70" column="79" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/house-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -628,20 +637,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/prebid.js" />
     <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/header.html" />
-    <entry file="file://$PROJECT_DIR$/config/settings.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7327">
-          <caret line="431" column="14" selection-start-line="431" selection-start-column="2" selection-end-line="431" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3613">
@@ -678,11 +673,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="446" column="51" lean-forward="true" selection-start-line="445" selection-start-column="7" selection-end-line="446" selection-end-column="51" />
+        <state relative-caret-position="969">
+          <caret line="216" column="20" lean-forward="true" selection-start-line="216" selection-start-column="20" selection-end-line="216" selection-end-column="20" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="937">
+          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/settings.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="462" column="45" selection-start-line="462" selection-start-column="2" selection-end-line="462" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="70" column="79" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="79" />
         </state>
       </provider>
     </entry>

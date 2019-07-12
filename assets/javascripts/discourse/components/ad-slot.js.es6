@@ -59,14 +59,14 @@ const adConfig = Ember.Object.create({
       enabledSetting: "community_id",
       //nthPost: "",
       desktop: {
-          "topic-list-top": "community_desktop_leaderboard_a",
-          "post-bottom": "community_desktop_leaderboard_b",
+          "topic-list-top": "community_topic_list_top_code",
+          "post-bottom": "community_post_bottom_code",
           "topic-above-post-stream": "community_topic_above_post_stream_code",
           "topic-above-suggested": "community_topic_above_suggested_code"
       },
       mobile: {
-          "topic-list-top": "community_mobile_300x250_a",
-          "post-bottom":  "community_mobile_300x250_b",
+          "topic-list-top": "community_mobile_topic_list_top_code",
+          "post-bottom":  "community_mobile_post_bottom_code",
           "topic-above-post-stream": "community_mobile_topic_above_post_stream_code",
           "topic-above-suggested": "community_mobile_topic_above_suggested_code"
       }
