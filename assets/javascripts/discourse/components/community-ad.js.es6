@@ -439,10 +439,9 @@ export default AdComponent.extend({
 
     @on("didInsertElement")
     _initGoogleDFP() {
-        if (!this.get("showAd")) {
-            console.error('here');
-            return;
-        }
+        // if (!this.get("showAd")) {
+        //     return;
+        // }
 
         loadGoogle(this.siteSettings).then(() => {
             loadBid(this.siteSettings).then(() => {
@@ -471,9 +470,9 @@ export default AdComponent.extend({
     willRender() {
         this._super(...arguments);
 
-        if (!this.get("showAd")) {
-            return;
-        }
+        // if (!this.get("showAd")) {
+        //     return;
+        // }
 
         let size = getWidthAndHeight(
             this.get("placement"),
