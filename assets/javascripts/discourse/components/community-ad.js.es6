@@ -440,6 +440,7 @@ export default AdComponent.extend({
     @on("didInsertElement")
     _initGoogleDFP() {
         if (!this.get("showAd")) {
+            console.error('here');
             return;
         }
 
