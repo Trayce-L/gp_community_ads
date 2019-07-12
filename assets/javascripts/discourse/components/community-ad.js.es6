@@ -439,12 +439,12 @@ export default AdComponent.extend({
 
     @on("didInsertElement")
     _initGoogleDFP() {
-        // if (!this.get("showAd")) {
-        //     return;
-        // }
+        if (!this.get("showAd")) {
+            return;
+        }
 
-        loadGoogle(this.siteSettings).then(() => {
-            loadBid(this.siteSettings).then(() => {
+        // loadGoogle(this.siteSettings).then(() => {
+        //     loadBid(this.siteSettings).then(() => {
                 this.set("loadedGoogletag", true);
                 this.set("lastAdRefresh", new Date());
                 window.googletag.cmd.push(() => {
@@ -463,16 +463,16 @@ export default AdComponent.extend({
                         window.googletag.pubads().refresh([slot.ad]);
                     }
                 });
-            });
-        });
+        //     });
+        // });
     },
 
     willRender() {
         this._super(...arguments);
 
-        // if (!this.get("showAd")) {
-        //     return;
-        // }
+        if (!this.get("showAd")) {
+            return;
+        }
 
         let size = getWidthAndHeight(
             this.get("placement"),
