@@ -444,9 +444,9 @@ export default AdComponent.extend({
     willRender() {
         this._super(...arguments);
 
-        if (!this.get("showAd")) {
-            return;
-        }
+        // if (!this.get("showAd")) {
+        //     return;
+        // }
 
         let size = getWidthAndHeight(
             this.get("placement"),
