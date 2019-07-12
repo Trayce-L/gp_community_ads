@@ -186,7 +186,7 @@ function loadGoogle() {
     let s = document.createElement("script");
 
 
-    head.appendChild(s);
+
 
     if (_loaded) {
         return Ember.RSVP.resolve();
@@ -214,6 +214,8 @@ function loadGoogle() {
                 s = s.onload = s.onreadystatechange = null;
             }
         };
+
+        head.appendChild(s);
 
         // if (window.googletag === undefined) {
         //     // eslint-disable-next-line no-console
