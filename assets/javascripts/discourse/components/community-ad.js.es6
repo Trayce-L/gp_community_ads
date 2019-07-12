@@ -417,8 +417,10 @@ export default AdComponent.extend({
         //     return;
         // }
 
-        // loadGoogle(this.siteSettings).then(() => {
-        //     loadBid(this.siteSettings).then(() => {
+        console.error('here');
+        
+        loadGoogle(this.siteSettings).then(() => {
+            loadBid(this.siteSettings).then(() => {
                 this.set("loadedGoogletag", true);
                 this.set("lastAdRefresh", new Date());
                 window.googletag.cmd.push(() => {
@@ -437,8 +439,8 @@ export default AdComponent.extend({
                         window.googletag.pubads().refresh([slot.ad]);
                     }
                 });
-        //     });
-        // });
+            });
+        });
     },
 
     willRender() {
