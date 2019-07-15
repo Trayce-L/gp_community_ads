@@ -135,9 +135,9 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   //     return;
   // }
 
-  // if (ads[divId]) {
-  //   return ads[divId];
-  // }
+  if (ads[divId]) {
+    return ads[divId];
+  }
 
   let ad, config, publisherId;
   let size = getWidthAndHeight(placement, settings, isMobile);
