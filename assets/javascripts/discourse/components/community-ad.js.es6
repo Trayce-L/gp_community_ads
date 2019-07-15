@@ -135,9 +135,9 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   //     return;
   // }
 
-  if (ads[divId]) {
-    return ads[divId];
-  }
+  // if (ads[divId]) {
+  //   return ads[divId];
+  // }
 
   let ad, config, publisherId;
   let size = getWidthAndHeight(placement, settings, isMobile);
@@ -324,7 +324,7 @@ export default AdComponent.extend({
   divId(placement, postNumber, isMobile) {
     let slotNum = getNextSlotNum();
     if (postNumber) {
-      return `div-ad-${slotNum}-${placement}-${postNumber}`;
+      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
     } else {
       //return `${DESKTOP_SETTINGS[placement].code}`;//`div-ad-${slotNum}-${placement}`;
       if (isMobile) {

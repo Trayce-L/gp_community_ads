@@ -72,14 +72,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="es6" value="975" />
+          <entry key="es6" value="985" />
           <entry key="hbs" value="49" />
           <entry key="yml" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ECMAScript 6" value="975" />
+          <entry key="ECMAScript 6" value="985" />
           <entry key="Handlebars/Mustache" value="49" />
           <entry key="YAML" value="141" />
         </counts>
@@ -91,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/settings.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
+            <state relative-caret-position="450">
               <caret line="434" column="17" selection-start-line="434" selection-start-column="2" selection-end-line="434" selection-end-column="17" />
             </state>
           </provider>
@@ -109,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="181" lean-forward="true" selection-start-line="181" selection-start-column="3" selection-end-line="300" selection-end-column="4" />
+            <state relative-caret-position="583">
+              <caret line="137" column="1" lean-forward="true" selection-start-line="137" selection-start-column="1" selection-end-line="139" selection-end-column="6" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -121,7 +121,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1853">
+            <state relative-caret-position="-646">
               <caret line="163" column="39" lean-forward="true" selection-start-line="163" selection-start-column="39" selection-end-line="163" selection-end-column="39" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
@@ -143,7 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>community-ad-</find>
       <find>MOBILE_SETTINGS</find>
       <find>DESKTOP_SETTINGS</find>
       <find>siteSettings</find>
@@ -167,12 +166,13 @@
       <find>_promise</find>
       <find>_loaded</find>
       <find>loadedGoogletag</find>
-      <find>categorySlug</find>
       <find>divId</find>
-      <find>publisherId</find>
       <find>showToGroups</find>
       <find>showOnCurrentPage</find>
       <find>showToTrustLevel</find>
+      <find>adUnitClass</find>
+      <find>categorySlug</find>
+      <find>publisherId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -327,7 +327,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563217110667" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563222892172" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -377,12 +377,12 @@
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
       <workItem from="1562018502513" duration="73660000" />
-      <workItem from="1562858960699" duration="24252000" />
+      <workItem from="1562858960699" duration="27334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100578000" />
+    <option name="totallyTimeSpent" value="103660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -640,13 +640,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6">
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="163" column="39" lean-forward="true" selection-start-line="163" selection-start-column="39" selection-end-line="163" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#97#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="612">
+          <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -657,17 +654,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
+    <entry file="file://$PROJECT_DIR$/config/settings.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        <state relative-caret-position="450">
+          <caret line="434" column="17" selection-start-line="434" selection-start-column="2" selection-end-line="434" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/settings.yml">
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="434" column="17" selection-start-line="434" selection-start-column="2" selection-end-line="434" selection-end-column="17" />
+        <state relative-caret-position="-646">
+          <caret line="163" column="39" lean-forward="true" selection-start-line="163" selection-start-column="39" selection-end-line="163" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#97#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -680,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="181" lean-forward="true" selection-start-line="181" selection-start-column="3" selection-end-line="300" selection-end-column="4" />
+        <state relative-caret-position="583">
+          <caret line="137" column="1" lean-forward="true" selection-start-line="137" selection-start-column="1" selection-end-line="139" selection-end-column="6" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
