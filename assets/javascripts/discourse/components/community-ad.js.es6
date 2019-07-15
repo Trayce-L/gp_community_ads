@@ -457,7 +457,7 @@ export default AdComponent.extend({
     //     return;
     // }
 
-      loadCommunity(this.siteSettings).then(() => {
+      // loadCommunity(this.siteSettings).then(() => {
        loadBid(this.siteSettings).then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
@@ -478,7 +478,7 @@ export default AdComponent.extend({
           }
         });
        });
-     });
+     // });
   },
 
   willRender() {
