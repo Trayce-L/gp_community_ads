@@ -156,15 +156,15 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     divId
   );
 
-  custom_targeting(
-      keyParse(settings[config.targeting_keys]),
-      keyParse(settings[config.targeting_values]),
-      ad
-  );
-
-  if (categoryTarget) {
-      ad.setTargeting("discourse-category", categoryTarget);
-  }
+  // custom_targeting(
+  //     keyParse(settings[config.targeting_keys]),
+  //     keyParse(settings[config.targeting_values]),
+  //     ad
+  // );
+  //
+  // if (categoryTarget) {
+  //     ad.setTargeting("discourse-category", categoryTarget);
+  // }
 
   ad.addService(window.googletag.pubads());
 
