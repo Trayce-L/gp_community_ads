@@ -6,6 +6,8 @@ import {
 import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
+  _communityloaded = false,
+  _bidloaded = false,
   _promise = null,
   _communitypromise = null,
   _bidpromise = null,
@@ -224,7 +226,7 @@ function loadCommunity() {
    * https://support.google.com/admanager/answer/4578089?hl=en
    */
 
-  if (_loaded) {
+  if (_communityloaded) {
     return Ember.RSVP.resolve();
   }
 
@@ -236,7 +238,7 @@ function loadCommunity() {
   var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
   _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
-    _loaded = true;
+    _communityloaded = true;
     // if (window.googletag === undefined) {
     //   // eslint-disable-next-line no-console
     //   console.log("googletag is undefined!");
@@ -264,7 +266,7 @@ function loadBid() {
    * https://support.google.com/admanager/answer/4578089?hl=en
    */
 
-  if (_loaded) {
+  if (_bidloaded) {
     return Ember.RSVP.resolve();
   }
 
@@ -276,7 +278,7 @@ function loadBid() {
   var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
   _bidpromise = loadScript(bidSrc, {scriptTag: true}).then(function () {
-    _loaded = true;
+    _bidloaded = true;
     // if (window.googletag === undefined) {
     //   // eslint-disable-next-line no-console
     //   console.log("prebid is undefined!");
