@@ -381,21 +381,21 @@ export default AdComponent.extend({
     "publisherId",
     "showToTrustLevel",
     "showToGroups",
-    "showAfterPost",
+    //"showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
     showToTrustLevel,
     showToGroups,
-    showAfterPost,
+    //showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
       showToTrustLevel &&
       showToGroups &&
-      showAfterPost &&
+      //showAfterPost &&
       showOnCurrentPage
     );
   },
@@ -403,18 +403,18 @@ export default AdComponent.extend({
   @computed("currentUser.trust_level")
   showToTrustLevel(trustLevel) {
     return !(
-      trustLevel && trustLevel > this.siteSettings.dfp_through_trust_level
+      trustLevel && trustLevel > this.siteSettings.community_trust
     );
   },
 
-  @computed("postNumber")
-  showAfterPost(postNumber) {
-    if (!postNumber) {
-      return true;
-    }
-
-    return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code));
-  },
+  // @computed("postNumber")
+  // showAfterPost(postNumber) {
+  //   if (!postNumber) {
+  //     return true;
+  //   }
+  //
+  //   return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code));
+  // },
 
   // 3 second delay between calls to refresh ads in a component.
   // Ember often calls updated() more than once, and *sometimes*
@@ -457,8 +457,8 @@ export default AdComponent.extend({
     //     return;
     // }
 
-      loadCommunity(this.siteSettings).then(() => {
-       loadBid(this.siteSettings).then(() => {
+      // loadCommunity(this.siteSettings).then(() => {
+      //  loadBid(this.siteSettings).then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
@@ -477,8 +477,8 @@ export default AdComponent.extend({
             window.googletag.pubads().refresh([slot.ad]);
           }
         });
-       });
-     });
+     //   });
+     // });
   },
 
   willRender() {

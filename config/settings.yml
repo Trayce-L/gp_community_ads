@@ -432,6 +432,10 @@ community_plugin:
   community_id:
     client: true
     default: "1"
+  community_trust:
+    client: true
+    default: 2
+    enum: "TrustLevelSetting"
   community_topic_list_top_code:
     client: true
     default: ""
