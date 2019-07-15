@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2f5309ca-9f6b-4c31-81f4-349bb816ce58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +41,7 @@
         <counts>
           <entry key="Gemfile" value="3" />
           <entry key="config" value="1" />
-          <entry key="es6" value="114" />
+          <entry key="es6" value="115" />
           <entry key="hbs" value="41" />
           <entry key="html" value="1" />
           <entry key="iml" value="1" />
@@ -57,7 +56,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ECMAScript 6" value="114" />
+          <entry key="ECMAScript 6" value="115" />
           <entry key="HTML" value="1" />
           <entry key="Handlebars/Mustache" value="40" />
           <entry key="IDEA_MODULE" value="1" />
@@ -110,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="409" column="2" selection-start-line="409" selection-start-column="5" selection-end-line="416" selection-end-column="7" />
+            <state relative-caret-position="260">
+              <caret line="181" lean-forward="true" selection-start-line="181" selection-start-column="3" selection-end-line="300" selection-end-column="4" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -144,8 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>community</find>
-      <find>dfp-ad-</find>
       <find>community-ad-</find>
       <find>MOBILE_SETTINGS</find>
       <find>DESKTOP_SETTINGS</find>
@@ -173,6 +170,8 @@
       <find>categorySlug</find>
       <find>divId</find>
       <find>publisherId</find>
+      <find>showToGroups</find>
+      <find>showOnCurrentPage</find>
       <find>showToTrustLevel</find>
     </findStrings>
   </component>
@@ -328,7 +327,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563216815097" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563217110667" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -378,12 +377,12 @@
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
       <workItem from="1562018502513" duration="73660000" />
-      <workItem from="1562858960699" duration="23898000" />
+      <workItem from="1562858960699" duration="24252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100224000" />
+    <option name="totallyTimeSpent" value="100578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -614,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="937">
-          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugin.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -648,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1853">
@@ -665,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/settings.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="434" column="17" selection-start-line="434" selection-start-column="2" selection-end-line="434" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1205">
@@ -679,10 +657,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/settings.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="434" column="17" selection-start-line="434" selection-start-column="2" selection-end-line="434" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="47" lean-forward="true" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="409" column="2" selection-start-line="409" selection-start-column="5" selection-end-line="416" selection-end-column="7" />
+        <state relative-caret-position="260">
+          <caret line="181" lean-forward="true" selection-start-line="181" selection-start-column="3" selection-end-line="300" selection-end-column="4" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
