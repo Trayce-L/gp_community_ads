@@ -276,22 +276,22 @@ function loadBid() {
 
   // The boilerplate code
   var bidSrc = "https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
-  _bidpromise = loadScript(bidSrc, {scriptTag: false}).then(function () {
+  _bidpromise = loadScript(bidSrc, {scriptTag: true}).then(function () {
     _bidloaded = true;
-    if (window.googletag === undefined) {
-      // eslint-disable-next-line no-console
-      console.log("prebid is undefined!");
-    }
-
-    window.googletag.cmd.push(function () {
-      // Infinite scroll requires SRA:
-      window.googletag.pubads().enableSingleRequest();
-
-      // we always use refresh() to fetch the ads:
-      window.googletag.pubads().disableInitialLoad();
-
-      window.googletag.enableServices();
-    });
+    // if (window.googletag === undefined) {
+    //   // eslint-disable-next-line no-console
+    //   console.log("prebid is undefined!");
+    // }
+    //
+    // window.googletag.cmd.push(function () {
+    //   // Infinite scroll requires SRA:
+    //   window.googletag.pubads().enableSingleRequest();
+    //
+    //   // we always use refresh() to fetch the ads:
+    //   window.googletag.pubads().disableInitialLoad();
+    //
+    //   window.googletag.enableServices();
+    // });
   });
 
   //window.googletag = window.googletag || {cmd: []};
@@ -457,7 +457,7 @@ export default AdComponent.extend({
     // }
 
       // loadCommunity(this.siteSettings).then(() => {
-       loadBid(this.siteSettings).then(() => {
+       loadBid().then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
