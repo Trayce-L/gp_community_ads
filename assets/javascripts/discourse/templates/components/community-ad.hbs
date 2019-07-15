@@ -2,11 +2,11 @@
     {{#if site.mobileView}}
         <h3>Test</h3>
         <!--<div class="google-dfp-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>-->
-        <!--<div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>-->
-            <!--<script>-->
-                <!--if(detectWidth() <= 980) { googletag.cmd.push(function() {googletag.display({{divId}});});}-->
-            <!--</script>-->
-        <!--</div>-->
+        <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
+            <script>
+                if(detectWidth() <= 980) { googletag.cmd.push(function() {googletag.display({{divId}});});}
+            </script>
+        </div>
     {{else}}
         <h3>Test</h3>
         <!--<div class="google-dfp-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>-->
