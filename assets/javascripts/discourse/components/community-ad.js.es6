@@ -4,6 +4,7 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
+import loadScriptbid from "discourse/lib/load-script";
 
 let _communityloaded = false,
   _bidloaded = false,
@@ -234,7 +235,7 @@ function loadBid() {
   // The boilerplate code
   var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
-  _bidpromise = new loadScript(bidSrc, {scriptTag: true}).then(function () {
+  _bidpromise = loadScriptbid(bidSrc, {scriptTag: true}).then(function () {
     _bidloaded = true;
     // if (window.googletag === undefined) {
     //   // eslint-disable-next-line no-console
