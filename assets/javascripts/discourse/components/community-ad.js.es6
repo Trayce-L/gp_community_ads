@@ -5,10 +5,8 @@ import {
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
 
-let _loaded = false,
-  _communityloaded = false,
+let _communityloaded = false,
   _bidloaded = false,
-  _promise = null,
   _communitypromise = null,
   _bidpromise = null,
   ads = {},
@@ -177,47 +175,6 @@ function destroySlot(divId) {
     window.googletag.destroySlots([ads[divId].ad]);
     delete ads[divId];
   }
-}
-
-function loadGoogle() {
-  /**
-   * Refer to this article for help:
-   * https://support.google.com/admanager/answer/4578089?hl=en
-   */
-
-  if (_loaded) {
-    return Ember.RSVP.resolve();
-  }
-
-  if (_promise) {
-    return _promise;
-  }
-
-  // The boilerplate code
-  var dfpSrc =
-    ("https:" === document.location.protocol ? "https:" : "http:") +
-    "//www.googletagservices.com/tag/js/gpt.js";
-  _promise = loadScript(dfpSrc, { scriptTag: true }).then(function() {
-    _loaded = true;
-    if (window.googletag === undefined) {
-      // eslint-disable-next-line no-console
-      console.log("googletag is undefined!");
-    }
-
-    window.googletag.cmd.push(function() {
-      // Infinite scroll requires SRA:
-      window.googletag.pubads().enableSingleRequest();
-
-      // we always use refresh() to fetch the ads:
-      window.googletag.pubads().disableInitialLoad();
-
-      window.googletag.enableServices();
-    });
-  });
-
-  window.googletag = window.googletag || { cmd: [] };
-
-  return _promise;
 }
 
 function loadCommunity() {
@@ -457,8 +414,8 @@ export default AdComponent.extend({
     //     return;
     // }
 
-      loadCommunity(this.siteSettings).then(() => {
-       loadBid(this.siteSettings).then(() => {
+    // loadCommunity(this.siteSettings).then(() => {
+      loadBid(this.siteSettings).then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
@@ -477,8 +434,8 @@ export default AdComponent.extend({
             window.googletag.pubads().refresh([slot.ad]);
           }
         });
-       });
-     });
+      });
+    // });
   },
 
   willRender() {
