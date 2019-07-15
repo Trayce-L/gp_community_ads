@@ -441,7 +441,7 @@ export default AdComponent.extend({
       //console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
       window.googletag.cmd.push(() => {
-        //ad.setTargeting("discourse-category", categorySlug || "0");
+        ad.setTargeting("discourse-category", categorySlug || "0");
         window.googletag.pubads().refresh([ad]);
       });
     }
