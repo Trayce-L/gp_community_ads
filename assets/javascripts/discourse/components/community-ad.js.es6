@@ -184,7 +184,7 @@ function loadCommunity() {
    */
 
   if (_communityloaded) {
-    return Ember.RSVP.resolve();
+    return Ember.RSVP.resolve(true, _communitypromise);
   }
 
   if (_communitypromise) {
@@ -224,7 +224,7 @@ function loadBid() {
    */
 
   if (_bidloaded) {
-    return Ember.RSVP.resolve();
+    return Ember.RSVP.resolve(true, _bidpromise);
   }
 
   if (_bidpromise) {
