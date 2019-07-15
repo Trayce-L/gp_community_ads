@@ -7,6 +7,8 @@ import loadScript from "discourse/lib/load-script";
 
 let _loaded = false,
   _promise = null,
+  _communitypromise = null,
+  _bidpromise = null,
   ads = {},
   nextSlotNum = 1;
 
@@ -226,14 +228,14 @@ function loadCommunity() {
     return Ember.RSVP.resolve();
   }
 
-  if (_promise) {
-    return _promise;
+  if (_communitypromise) {
+    return _communitypromise;
   }
 
   // The boilerplate code
   var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-  _promise = loadScript(communitySrc, {scriptTag: true}).then(function () {
+  _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
     _loaded = true;
     // if (window.googletag === undefined) {
     //   // eslint-disable-next-line no-console
@@ -253,7 +255,7 @@ function loadCommunity() {
 
   //window.googletag = window.googletag || {cmd: []};
 
-  return _promise;
+  return _communitypromise;
 }
 
 function loadBid() {
@@ -266,14 +268,14 @@ function loadBid() {
     return Ember.RSVP.resolve();
   }
 
-  if (_promise) {
-    return _promise;
+  if (_bidpromise) {
+    return _bidpromise;
   }
 
   // The boilerplate code
   var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
-  _promise = loadScript(bidSrc, {scriptTag: true}).then(function () {
+  _bidpromise = loadScript(bidSrc, {scriptTag: true}).then(function () {
     _loaded = true;
     // if (window.googletag === undefined) {
     //   // eslint-disable-next-line no-console
@@ -293,7 +295,7 @@ function loadBid() {
 
   //window.googletag = window.googletag || {cmd: []};
 
-  return _promise;
+  return _bidpromise;
 }
 
 export default AdComponent.extend({
@@ -454,7 +456,7 @@ export default AdComponent.extend({
     // }
 
       loadCommunity(this.siteSettings).then(() => {
-    //   loadBid(this.siteSettings).then(() => {
+       loadBid(this.siteSettings).then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
@@ -473,7 +475,7 @@ export default AdComponent.extend({
             window.googletag.pubads().refresh([slot.ad]);
           }
         });
-    //   });
+       });
      });
   },
 
