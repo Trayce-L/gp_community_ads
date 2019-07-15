@@ -55,21 +55,21 @@ const adConfig = Ember.Object.create({
     }
   },
   "community-ad": {
-      settingPrefix: "community", // settings follow naming convention
-      enabledSetting: "community_id",
-      //nthPost: "",
-      desktop: {
-          "topic-list-top": "community_topic_list_top_code",
-          "post-bottom": "community_post_bottom_code",
-          "topic-above-post-stream": "community_topic_above_post_stream_code",
-          "topic-above-suggested": "community_topic_above_suggested_code"
-      },
-      mobile: {
-          "topic-list-top": "community_mobile_topic_list_top_code",
-          "post-bottom":  "community_mobile_post_bottom_code",
-          "topic-above-post-stream": "community_mobile_topic_above_post_stream_code",
-          "topic-above-suggested": "community_mobile_topic_above_suggested_code"
-      }
+    settingPrefix: "community", // settings follow naming convention
+    enabledSetting: "community_id",
+    //nthPost: "",
+    desktop: {
+      "topic-list-top": "community_topic_list_top_code",
+      "post-bottom": "community_post_bottom_code",
+      "topic-above-post-stream": "community_topic_above_post_stream_code",
+      "topic-above-suggested": "community_topic_above_suggested_code"
+    },
+    mobile: {
+      "topic-list-top": "community_mobile_topic_list_top_code",
+      "post-bottom":  "community_mobile_post_bottom_code",
+      "topic-above-post-stream": "community_mobile_topic_above_post_stream_code",
+      "topic-above-suggested": "community_mobile_topic_above_suggested_code"
+    }
   },
 });
 
