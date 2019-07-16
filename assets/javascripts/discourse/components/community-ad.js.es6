@@ -416,8 +416,8 @@ export default AdComponent.extend({
 
     loadCommunity(this.siteSettings).then(() => {
       loadBid(this.siteSettings).then(() => {
-        console.log(loadBid());
-        console.log(loadCommunity());
+        console.error(loadBid());
+        console.error(loadCommunity());
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
