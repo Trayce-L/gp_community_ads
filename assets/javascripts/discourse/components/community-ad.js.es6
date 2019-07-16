@@ -413,12 +413,12 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
-    console.debug('Bid Load Start');
+    console.log('Bid Load Start');
     loadCommunity(this.siteSettings).then(() => {
       loadBid(this.siteSettings).then(() => {
-        console.debug(loadBid());
-        console.debug(loadCommunity());
-        console.debug('Bid Load Finish');
+        console.log(loadBid());
+        console.log(loadCommunity());
+        console.log('Bid Load Finish');
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
