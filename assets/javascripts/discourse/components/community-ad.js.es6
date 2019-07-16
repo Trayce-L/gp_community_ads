@@ -413,12 +413,12 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
-    console.log('Bid Load Start');
+    console.log(`Bid Load Start`);
     loadCommunity(this.siteSettings).then(() => {
       loadBid(this.siteSettings).then(() => {
-        console.log(loadBid());
-        console.log(loadCommunity());
-        console.log('Bid Load Finish');
+        console.log(`loadBid()`);
+        console.log(`loadCommunity()`);
+        console.log(`Bid Load Finish`);
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
@@ -433,7 +433,7 @@ export default AdComponent.extend({
             // Display has to be called before refresh
             // and after the slot div is in the page.
             window.googletag.display(this.get("divId"));
-            // console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
+            //= console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
             window.googletag.pubads().refresh([slot.ad]);
           }
         });
