@@ -413,8 +413,8 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
-    loadCommunity(this.siteSettings).then(() => {
-      loadBid(this.siteSettings).then(() => {
+    loadCommunity().then(function() {
+      loadBid().then(function() {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
