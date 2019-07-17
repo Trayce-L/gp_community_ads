@@ -183,38 +183,51 @@ function loadCommunity() {
    * https://support.google.com/admanager/answer/4578089?hl=en
    */
 
-  if (_communityloaded) {
-    return _communitypromise.resolve(true);
-  }
-
-  if (_communitypromise) {
-    return _communitypromise;
-  }
-
-  // The boilerplate code
-  var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
-    "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-  _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
-    _communityloaded = true;
-    // if (window.googletag === undefined) {
-    //   // eslint-disable-next-line no-console
-    //   console.log("googletag is undefined!");
-    // }
-    //
-    // window.googletag.cmd.push(function () {
-    //   // Infinite scroll requires SRA:
-    //   window.googletag.pubads().enableSingleRequest();
-    //
-    //   // we always use refresh() to fetch the ads:
-    //   window.googletag.pubads().disableInitialLoad();
-    //
-    //   window.googletag.enableServices();
-    //});
+  return new Ember.RSVP.Promise(function(resolve) {
+    // If we already loaded this url
+    var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+    var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
+    loadScript(communitySrc, {scriptTag: true}).then(function () {
+      loadScript(bidSrc, {scriptTag: true}).then(function () {
+        return resolve();
+      });
+    });
   });
 
-  //window.googletag = window.googletag || {cmd: []};
-
-  return _communitypromise;
+  // if (_communityloaded) {
+  //   return Ember.RSVP.resolve();
+  // }
+  //
+  // if (_communitypromise) {
+  //   return _communitypromise;
+  // }
+  //
+  // // The boilerplate code
+  // var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+  //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+  // _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
+  //   _communityloaded = true;
+  //   // if (window.googletag === undefined) {
+  //   //   // eslint-disable-next-line no-console
+  //   //   console.log("googletag is undefined!");
+  //   // }
+  //   //
+  //   // window.googletag.cmd.push(function () {
+  //   //   // Infinite scroll requires SRA:
+  //   //   window.googletag.pubads().enableSingleRequest();
+  //   //
+  //   //   // we always use refresh() to fetch the ads:
+  //   //   window.googletag.pubads().disableInitialLoad();
+  //   //
+  //   //   window.googletag.enableServices();
+  //   //});
+  // });
+  //
+  // //window.googletag = window.googletag || {cmd: []};
+  //
+  // return _communitypromise;
 }
 
 function loadBid() {
@@ -224,7 +237,7 @@ function loadBid() {
    */
 
   if (_bidloaded) {
-    return _bidpromise.resolve(true);
+    return Ember.RSVP.resolve();
   }
 
   if (_bidpromise) {
