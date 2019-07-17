@@ -441,31 +441,25 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
-    loadCommunity().then(function() {
-      loadBid().then(function() {
-        this.set("loadedGoogletag", true);
-        this.set("lastAdRefresh", new Date());
-        window.googletag.cmd.push(() => {
-          let slot = defineSlot(
-            this.get("divId"),
-            this.get("placement"),
-            this.siteSettings,
-            this.site.mobileView,
-            this.get("currentCategorySlug") || "0"
-          );
-          if (slot && slot.ad) {
-            // Display has to be called before refresh
-            // and after the slot div is in the page.
-            window.googletag.display(this.get("divId"));
-            //= console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
-            window.googletag.pubads().refresh([slot.ad]);
-          }
-        });
+    loadCommunity().then(function () {
+      this.set("loadedGoogletag", true);
+      this.set("lastAdRefresh", new Date());
+      window.googletag.cmd.push(() => {
+        let slot = defineSlot(
+          this.get("divId"),
+          this.get("placement"),
+          this.siteSettings,
+          this.site.mobileView,
+          this.get("currentCategorySlug") || "0"
+        );
+        if (slot && slot.ad) {
+          // Display has to be called before refresh
+          // and after the slot div is in the page.
+          window.googletag.display(this.get("divId"));
+          //= console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
+          window.googletag.pubads().refresh([slot.ad]);
+        }
       });
-    }, function() {
-        loadBid(this.siteSettings).then(() => {
-
-        });
     });
   },
 
