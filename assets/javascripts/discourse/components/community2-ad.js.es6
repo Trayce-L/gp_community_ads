@@ -53,28 +53,28 @@ function custom_targeting(key_array, value_array, adSlot) {
 
 const DESKTOP_SETTINGS = {
   "topic-list-top": {
-    code: "community_topic_list_top_code",
+    code: "community2_topic_list_top_code",
     width: 728,
     height: 90,
     targeting_keys: "",
     targeting_values: ""
   },
   "topic-above-post-stream": {
-    code: "community_topic_above_post_stream_code",
+    code: "community2_topic_list_top_code",
     width: 728,
     height: 90,
     targeting_keys: "",
     targeting_values: ""
   },
   "topic-above-suggested": {
-    code: "community_topic_above_suggested_code",
+    code: "community2_topic_list_top_code",
     width: 728,
     height: 90,
     targeting_keys: "",
     targeting_values: ""
   },
   "post-bottom": {
-    code: "community_post_bottom_code",
+    code: "community2_topic_list_top_code",
     width: 728,
     height: 90,
     targeting_keys: "",
@@ -84,28 +84,28 @@ const DESKTOP_SETTINGS = {
 
 const MOBILE_SETTINGS = {
   "topic-list-top": {
-    code: "community_mobile_topic_list_top_code",
+    code: "community2_topic_list_top_code",
     width: 300,
     height: 250,
     targeting_keys: "",
     targeting_values: ""
   },
   "topic-above-post-stream": {
-    code: "community_mobile_topic_above_post_stream_code",
+    code: "community2_topic_list_top_code",
     width: 300,
     height: 250,
     targeting_keys: "",
     targeting_values: ""
   },
   "topic-above-suggested": {
-    code: "community_mobile_topic_above_suggested_code",
+    code: "community2_topic_list_top_code",
     width: 300,
     height: 250,
     targeting_keys: "",
     targeting_values: ""
   },
   "post-bottom": {
-    code: "community_mobile_post_bottom_code",
+    code: "community2_topic_list_top_code",
     width: 300,
     height: 250,
     targeting_keys: "",
@@ -177,45 +177,45 @@ function destroySlot(divId) {
   }
 }
 
-function loadCommunity() {
-  /**
-   * Refer to this article for help:
-   * https://support.google.com/admanager/answer/4578089?hl=en
-   */
-
-  if (_communityloaded) {
-    return _communitypromise.resolve(true);
-  }
-
-  if (_communitypromise) {
-    return _communitypromise;
-  }
-
-  // The boilerplate code
-  var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
-    "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-  _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
-    _communityloaded = true;
-    // if (window.googletag === undefined) {
-    //   // eslint-disable-next-line no-console
-    //   console.log("googletag is undefined!");
-    // }
-    //
-    // window.googletag.cmd.push(function () {
-    //   // Infinite scroll requires SRA:
-    //   window.googletag.pubads().enableSingleRequest();
-    //
-    //   // we always use refresh() to fetch the ads:
-    //   window.googletag.pubads().disableInitialLoad();
-    //
-    //   window.googletag.enableServices();
-    //});
-  });
-
-  //window.googletag = window.googletag || {cmd: []};
-
-  return _communitypromise;
-}
+// function loadCommunity() {
+//   /**
+//    * Refer to this article for help:
+//    * https://support.google.com/admanager/answer/4578089?hl=en
+//    */
+//
+//   if (_communityloaded) {
+//     return _communitypromise.resolve(true);
+//   }
+//
+//   if (_communitypromise) {
+//     return _communitypromise;
+//   }
+//
+//   // The boilerplate code
+//   var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+//     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+//   _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
+//     _communityloaded = true;
+//     // if (window.googletag === undefined) {
+//     //   // eslint-disable-next-line no-console
+//     //   console.log("googletag is undefined!");
+//     // }
+//     //
+//     // window.googletag.cmd.push(function () {
+//     //   // Infinite scroll requires SRA:
+//     //   window.googletag.pubads().enableSingleRequest();
+//     //
+//     //   // we always use refresh() to fetch the ads:
+//     //   window.googletag.pubads().disableInitialLoad();
+//     //
+//     //   window.googletag.enableServices();
+//     //});
+//   });
+//
+//   //window.googletag = window.googletag || {cmd: []};
+//
+//   return _communitypromise;
+// }
 
 function loadBid() {
   /**
@@ -259,7 +259,7 @@ function loadBid() {
 
 export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
-  classNames: ["community-ad"],
+  classNames: ["community2-ad"],
   loadedGoogletag: false,
   refreshOnChange: null,
   lastAdRefresh: null,
@@ -288,32 +288,32 @@ export default AdComponent.extend({
         //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
         //return settings[MOBILE_SETTINGS[placement].code];
         if (placement === "topic-list-top") {
-          return `${this.siteSettings.community_mobile_topic_list_top_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
         if (placement === "topic-above-post-stream") {
-          return `${this.siteSettings.community_mobile_topic_above_post_stream_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
         if (placement === "topic-above-suggested") {
-          return `${this.siteSettings.community_mobile_topic_above_suggested_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
         if (placement === "post-bottom") {
-          return `${this.siteSettings.community_mobile_post_bottom_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
 
       } else {
         //publisherId = settings.dfp_publisher_id;
         //return settings[DESKTOP_SETTINGS[placement].code];
         if (placement === "topic-list-top") {
-          return `${this.siteSettings.community_topic_list_top_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
         if (placement === "topic-above-post-stream") {
-          return `${this.siteSettings.community_topic_above_post_stream_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
         if (placement === "topic-above-suggested") {
-          return `${this.siteSettings.community_topic_above_suggested_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
         if (placement === "post-bottom") {
-          return `${this.siteSettings.community_post_bottom_code}`;
+          return `${this.siteSettings.community2_topic_list_top_code}`;
         }
       }
     }
@@ -413,7 +413,7 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
-    loadCommunity(this.siteSettings).then(() => {
+    // loadCommunity(this.siteSettings).then(() => {
       loadBid(this.siteSettings).then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
@@ -434,7 +434,7 @@ export default AdComponent.extend({
           }
         });
       });
-    });
+    // });
   },
 
   willRender() {
