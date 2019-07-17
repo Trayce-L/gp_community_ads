@@ -195,21 +195,24 @@ function loadCommunity() {
   var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
     "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
   _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
-    _communityloaded = true;
-    // if (window.googletag === undefined) {
-    //   // eslint-disable-next-line no-console
-    //   console.log("googletag is undefined!");
-    // }
-    //
-    // window.googletag.cmd.push(function () {
-    //   // Infinite scroll requires SRA:
-    //   window.googletag.pubads().enableSingleRequest();
-    //
-    //   // we always use refresh() to fetch the ads:
-    //   window.googletag.pubads().disableInitialLoad();
-    //
-    //   window.googletag.enableServices();
-    //});
+    loadbid(this.siteSettings).then(function ()
+    {
+      _communityloaded = true;
+      // if (window.googletag === undefined) {
+      //   // eslint-disable-next-line no-console
+      //   console.log("googletag is undefined!");
+      // }
+      //
+      // window.googletag.cmd.push(function () {
+      //   // Infinite scroll requires SRA:
+      //   window.googletag.pubads().enableSingleRequest();
+      //
+      //   // we always use refresh() to fetch the ads:
+      //   window.googletag.pubads().disableInitialLoad();
+      //
+      //   window.googletag.enableServices();
+      //});
+    });
   });
 
   //window.googletag = window.googletag || {cmd: []};
@@ -414,7 +417,7 @@ export default AdComponent.extend({
     //     return;
     // }
     loadCommunity(this.siteSettings).then(() => {
-      loadBid(this.siteSettings).then(() => {
+      // loadBid(this.siteSettings).then(() => {
         this.set("loadedGoogletag", true);
         this.set("lastAdRefresh", new Date());
         window.googletag.cmd.push(() => {
@@ -433,7 +436,7 @@ export default AdComponent.extend({
             window.googletag.pubads().refresh([slot.ad]);
           }
         });
-      });
+      // });
     });
   },
 

@@ -71,23 +71,6 @@ const adConfig = Ember.Object.create({
       "topic-above-suggested": "community_mobile_topic_above_suggested_code"
     }
   },
-  "community2-ad": {
-    settingPrefix: "community2", // settings follow naming convention
-    enabledSetting: "community2_id",
-    //nthPost: "",
-    desktop: {
-      "topic-list-top": "community2_topic_list_top_code",
-      "post-bottom": "community2_post_bottom_code",
-      "topic-above-post-stream": "community2_topic_above_post_stream_code",
-      "topic-above-suggested": "community2_topic_above_suggested_code"
-    },
-    mobile: {
-      "topic-list-top": "community2_mobile_topic_list_top_code",
-      "post-bottom":  "community2_mobile_post_bottom_code",
-      "topic-above-post-stream": "community2_mobile_topic_above_post_stream_code",
-      "topic-above-suggested": "community2_mobile_topic_above_suggested_code"
-    }
-  },
 });
 
 const displayCounts = {
