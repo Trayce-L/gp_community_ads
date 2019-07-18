@@ -4,8 +4,8 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
-import headercode from 'discourse/plugins/discourse-adplugin/misc/header.html';
-import bidcode from 'discourse/plugins/discourse-adplugin/misc/prebid.js';
+// import headercode from 'discourse/plugins/discourse-adplugin/misc/header.html';
+// import bidcode from 'discourse/plugins/discourse-adplugin/misc/prebid.js';
 
 let _communityloaded = false,
   _bidloaded = false,
@@ -190,12 +190,13 @@ function loadCommunity() {
   // head.appendChild(s);
   // head.appendChild(s);
   return new Ember.RSVP.Promise(function(resolve) {
+    // let s = document.createElement("script");
+    //
+    // head.appendChild(headercode);
+    // head.appendChild(bidcode);
 
-    head.appendChild(headercode);
-    head.appendChild(bidcode);
-
-    _communityloaded = true;
-    _bidloaded = true;
+    _communityloaded = false;
+    _bidloaded = false;
 
     if(_bidloaded && _communityloaded)
     {
@@ -208,17 +209,17 @@ function loadCommunity() {
     // var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
     //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
 
-    // var communitySrc = "\\assets\\javascripts\\misc\\header.html";
-    // var bidSrc = "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
-    //
-    //
-    // loadScript(communitySrc, {scriptTag: true}).then(function () {
-    //   _communityloaded = true;
-    // });
-    //
-    // loadScript(bidSrc, {scriptTag: true}).then(function () {
-    //   _bidloaded = true;
-    // });
+    var communitySrc = "\\discourse/plugins/discourse-adplugin/misc/header.html";
+    var bidSrc = "\\discourse/plugins/discourse-adplugin/misc/prebid.js";
+
+
+    loadScript(communitySrc, {scriptTag: true}).then(function () {
+      _communityloaded = true;
+    });
+
+    loadScript(bidSrc, {scriptTag: true}).then(function () {
+      _bidloaded = true;
+    });
   });
 
   // if (_communityloaded) {
