@@ -4,6 +4,8 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
+import headercode from 'discourse/plugins/discourse-adplugin/misc/header.html';
+import bidcode from 'discourse/plugins/discourse-adplugin/misc/prebid.js';
 
 let _communityloaded = false,
   _bidloaded = false,
@@ -183,12 +185,17 @@ function loadCommunity() {
    * https://support.google.com/admanager/answer/4578089?hl=en
    */
 
-
-
+  const head = document.getElementsByTagName("head")[0];
+  //
+  // head.appendChild(s);
+  // head.appendChild(s);
   return new Ember.RSVP.Promise(function(resolve) {
 
-    _communityloaded = false;
-    _bidloaded = false;
+    head.appendChild(headercode);
+    head.appendChild(bidcode);
+
+    _communityloaded = true;
+    _bidloaded = true;
 
     if(_bidloaded && _communityloaded)
     {
@@ -196,19 +203,22 @@ function loadCommunity() {
     }
 
     // If we already loaded this url
-    var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
-      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-    var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
-      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
+    // var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+    //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+    // var bidSrc = ("https:" === document.location.protocol ? "https:" : "http:") +
+    //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
 
-
-    loadScript(communitySrc, {scriptTag: true}).then(function () {
-      _communityloaded = true;
-    });
-
-    loadScript(bidSrc, {scriptTag: true}).then(function () {
-      _bidloaded = true;
-    });
+    // var communitySrc = "\\assets\\javascripts\\misc\\header.html";
+    // var bidSrc = "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
+    //
+    //
+    // loadScript(communitySrc, {scriptTag: true}).then(function () {
+    //   _communityloaded = true;
+    // });
+    //
+    // loadScript(bidSrc, {scriptTag: true}).then(function () {
+    //   _bidloaded = true;
+    // });
   });
 
   // if (_communityloaded) {
