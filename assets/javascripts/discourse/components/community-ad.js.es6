@@ -192,16 +192,16 @@ function loadCommunity() {
   return new Ember.RSVP.Promise(function(resolve) {
     // let s = document.createElement("script");
     //
-    let headText = document.createTextNode(headercode);
-    let bidText = document.createTextNode(bidcode);
-   // head.appendChild(headercode);
-   // head.appendChild(bidcode);
-
-    head.appendChild(headText);
-    head.appendChild(bidText);  
-
-    _communityloaded = true;
-    _bidloaded = true;
+   //  let headText = document.createTextNode(headercode);
+   //  let bidText = document.createTextNode(bidcode);
+   // // head.appendChild(headercode);
+   // // head.appendChild(bidcode);
+   //
+   //  head.appendChild(headText);
+   //  head.appendChild(bidText);
+   //
+   //  _communityloaded = true;
+   //  _bidloaded = true;
 
     if(_bidloaded && _communityloaded)
     {
@@ -348,15 +348,19 @@ export default AdComponent.extend({
         //publisherId = settings.dfp_publisher_id;
         //return settings[DESKTOP_SETTINGS[placement].code];
         if (placement === "topic-list-top") {
+          return headercode;
           return `${this.siteSettings.community_topic_list_top_code}`;
         }
         if (placement === "topic-above-post-stream") {
+          return headercode;
           return `${this.siteSettings.community_topic_above_post_stream_code}`;
         }
         if (placement === "topic-above-suggested") {
+          return headercode;
           return `${this.siteSettings.community_topic_above_suggested_code}`;
         }
         if (placement === "post-bottom") {
+          return headercode;
           return `${this.siteSettings.community_post_bottom_code}`;
         }
       }
