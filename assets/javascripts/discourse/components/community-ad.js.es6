@@ -4,8 +4,8 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
-import headercode from 'discourse/plugins/discourse-adplugin/misc/header.html';
-import bidcode from 'discourse/plugins/discourse-adplugin/misc/prebid.js';
+// import headercode from 'discourse/plugins/discourse-adplugin/misc/header.html';
+// import bidcode from 'discourse/plugins/discourse-adplugin/misc/prebid.js';
 
 let _communityloaded = false,
   _bidloaded = false,
