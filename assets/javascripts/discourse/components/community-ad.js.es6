@@ -348,19 +348,39 @@ export default AdComponent.extend({
         //publisherId = settings.dfp_publisher_id;
         //return settings[DESKTOP_SETTINGS[placement].code];
         if (placement === "topic-list-top") {
-          return headercode;
+          if(headercode){
+            return true;
+          }
+          else{
+            return false;
+          }
           return `${this.siteSettings.community_topic_list_top_code}`;
         }
         if (placement === "topic-above-post-stream") {
-          return headercode;
+          if(headercode){
+            return true;
+          }
+          else{
+            return false;
+          }
           return `${this.siteSettings.community_topic_above_post_stream_code}`;
         }
         if (placement === "topic-above-suggested") {
-          return headercode;
+          if(headercode){
+            return true;
+          }
+          else{
+            return false;
+          }
           return `${this.siteSettings.community_topic_above_suggested_code}`;
         }
         if (placement === "post-bottom") {
-          return headercode;
+          if(headercode){
+            return true;
+          }
+          else{
+            return false;
+          }
           return `${this.siteSettings.community_post_bottom_code}`;
         }
       }
