@@ -218,13 +218,52 @@ function loadCommunity() {
     // var bidSrc = "\\discourse/plugins/discourse-adplugin/misc/prebid.js";
     //
     //
-    loadScript(communitySrc, {scriptTag: true, css: "script-src 'self' http://somedomain 'unsafe-inline' 'unsafe-eval'"}).then(function () {
-      _communityloaded = true;
-    });
+    const head = document.getElementsByTagName("head")[0];
 
-    loadScript(bidSrc, {scriptTag: true}).then(function () {
+    let s = document.createElement("script");
+    s.src = communitySrc;
+    s.type='text/javascript';
+
+    s.onload = s.onreadystatechange = function(_, abort) {
+      _communityloaded = true;
+      if (
+        abort ||
+        !s.readyState ||
+        s.readyState === "loaded" ||
+        s.readyState === "complete"
+      ) {
+        s = s.onload = s.onreadystatechange = null;
+      }
+    };
+
+    head.appendChild(s);
+
+    let sbid = document.createElement("script");
+    sbid.src = communitySrc;
+    sbid.type='text/javascript';
+
+    sbid.onload = sbid.onreadystatechange = function(_, abort) {
       _bidloaded = true;
-    });
+      if (
+        abort ||
+        !sbid.readyState ||
+        sbid.readyState === "loaded" ||
+        sbid.readyState === "complete"
+      ) {
+        sbid = sbid.onload = sbid.onreadystatechange = null;
+      }
+    };
+
+    head.appendChild(sbid);
+
+
+    // loadScript(communitySrc, {scriptTag: true}).then(function () {
+    //   _communityloaded = true;
+    // });
+    //
+    // loadScript(bidSrc, {scriptTag: true}).then(function () {
+    //   _bidloaded = true;
+    // });
   });
 
   // if (_communityloaded) {
