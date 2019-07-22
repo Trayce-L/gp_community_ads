@@ -4,8 +4,9 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
-// import headercode from 'discourse/plugins/discourse-adplugin/misc/header.html';
-// import bidcode from 'discourse/plugins/discourse-adplugin/misc/prebid.js';
+import { ajax } from "discourse/lib/ajax";
+const _loaded = {};
+const _loading = {};
 
 let _communityloaded = false,
   _bidloaded = false,
@@ -179,6 +180,94 @@ function destroySlot(divId) {
   }
 }
 
+function loadWithTag(path, cb) {
+  const head = document.getElementsByTagName("head")[0];
+
+  let finished = false;
+  let s = document.createElement("script");
+  s.src = path;
+  if (Ember.Test) {
+    Ember.Test.registerWaiter(() => finished);
+  }
+
+  s.onload = s.onreadystatechange = function(_, abort) {
+    finished = true;
+    if (
+      abort ||
+      !s.readyState ||
+      s.readyState === "loaded" ||
+      s.readyState === "complete"
+    ) {
+      s = s.onload = s.onreadystatechange = null;
+      if (!abort) {
+        Ember.run(null, cb);
+      }
+    }
+  };
+
+  head.appendChild(s);
+}
+
+function loadScriptCode(url, opts) {
+  // TODO: Remove this once plugins have been updated not to use it:
+  if (url === "defer/html-sanitizer-bundle") {
+    return Ember.RSVP.Promise.resolve();
+  }
+
+  opts = opts || {};
+
+  // Scripts should always load from CDN
+  // CSS is type text, to accept it from a CDN we would need to handle CORS
+  url = opts.css ? Discourse.getURL(url) : Discourse.getURLWithCDN(url);
+
+  $("script").each((i, tag) => {
+    const src = tag.getAttribute("src");
+
+    if (src && src !== url && !_loading[src]) {
+      _loaded[src] = true;
+    }
+  });
+
+  return new Ember.RSVP.Promise(function(resolve) {
+    // If we already loaded this url
+    if (_loaded[url]) {
+      return resolve();
+    }
+    if (_loading[url]) {
+      return _loading[url].then(resolve);
+    }
+
+    let done;
+    _loading[url] = new Ember.RSVP.Promise(function(_done) {
+      done = _done;
+    });
+
+    _loading[url].then(function() {
+      delete _loading[url];
+    });
+
+    const cb = function(data) {
+      if (opts && opts.css) {
+        $("head").append("<style>" + data + "</style>");
+      }
+      done();
+      resolve();
+      _loaded[url] = true;
+    };
+
+    if (opts.css) {
+      ajax({
+        url: url,
+        dataType: "text",
+        cache: true
+      }).then(cb);
+    } else {
+      // Always load JavaScript with script tag to avoid Content Security Policy inline violations
+      loadWithTag(url, cb);
+    }
+  });
+}
+
 function loadCommunity() {
   /**
    * Refer to this article for help:
@@ -216,60 +305,15 @@ function loadCommunity() {
     //
     // var communitySrc = "\\discourse/plugins/discourse-adplugin/misc/header.html";
     // var bidSrc = "\\discourse/plugins/discourse-adplugin/misc/prebid.js";
-    //
-    //
-    const head = document.getElementsByTagName("head")[0];
 
-    let s = document.createElement("script");
-    s.src = communitySrc;
-    s.type='text/javascript';
 
-    s.onload = s.onreadystatechange = function(_, abort) {
+    loadScriptCode(communitySrc, {scriptTag: true}).then(function () {
       _communityloaded = true;
-      if (
-        abort ||
-        !s.readyState ||
-        s.readyState === "loaded" ||
-        s.readyState === "complete"
-      ) {
-        s = s.onload = s.onreadystatechange = null;
-        if (!abort) {
-          Ember.run(null, null);
-        }
-      }
-    };
+    });
 
-    head.appendChild(s);
-
-    let sbid = document.createElement("script");
-    sbid.src = bidSrc;
-    sbid.type='text/javascript';
-
-    sbid.onload = sbid.onreadystatechange = function(_, abort) {
+    loadScriptCode(bidSrc, {scriptTag: true}).then(function () {
       _bidloaded = true;
-      if (
-        abort ||
-        !sbid.readyState ||
-        sbid.readyState === "loaded" ||
-        sbid.readyState === "complete"
-      ) {
-        sbid = sbid.onload = sbid.onreadystatechange = null;
-        if (!abort) {
-          Ember.run(null, null);
-        }
-      }
-    };
-
-    head.appendChild(sbid);
-
-
-    // loadScript(communitySrc, {scriptTag: true}).then(function () {
-    //   _communityloaded = true;
-    // });
-    //
-    // loadScript(bidSrc, {scriptTag: true}).then(function () {
-    //   _bidloaded = true;
-    // });
+    });
   });
 
   // if (_communityloaded) {
