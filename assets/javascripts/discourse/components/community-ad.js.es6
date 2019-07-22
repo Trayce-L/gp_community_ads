@@ -175,7 +175,7 @@ const headercode = ("<script type=\"text/javascript\">\n" +
   "</script>\n" +
   "<script type=\"text/javascript\" async=\"true\" src=\"LOCATION OF PREBID FILE\"></script>\n" +
   "<!-- END: Header Bidding -->");
-import bidcode from "discourse/plugins/discourse-adplugin/misc/prebid";
+const bidcode = "test";
 import { ajax } from "discourse/lib/ajax";
 const _loaded = {};
 const _loading = {};
