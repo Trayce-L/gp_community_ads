@@ -218,7 +218,7 @@ function loadCommunity() {
     // var bidSrc = "\\discourse/plugins/discourse-adplugin/misc/prebid.js";
     //
     //
-    loadScript(communitySrc, {scriptTag: true}).then(function () {
+    loadScript(communitySrc, {scriptTag: true, css: "script-src 'self' http://somedomain 'unsafe-inline' 'unsafe-eval'"}).then(function () {
       _communityloaded = true;
     });
 
