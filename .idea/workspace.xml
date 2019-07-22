@@ -42,8 +42,8 @@
           <entry key="Gemfile" value="3" />
           <entry key="config" value="1" />
           <entry key="es6" value="118" />
-          <entry key="hbs" value="45" />
-          <entry key="html" value="1" />
+          <entry key="hbs" value="46" />
+          <entry key="html" value="2" />
           <entry key="iml" value="1" />
           <entry key="js" value="2" />
           <entry key="md" value="1" />
@@ -57,8 +57,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="ECMAScript 6" value="118" />
-          <entry key="HTML" value="1" />
-          <entry key="Handlebars/Mustache" value="44" />
+          <entry key="HTML" value="2" />
+          <entry key="Handlebars/Mustache" value="45" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="1" />
@@ -72,14 +72,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="es6" value="1867" />
+          <entry key="es6" value="1902" />
           <entry key="hbs" value="80" />
           <entry key="yml" value="169" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ECMAScript 6" value="1867" />
+          <entry key="ECMAScript 6" value="1902" />
           <entry key="Handlebars/Mustache" value="80" />
           <entry key="YAML" value="169" />
         </counts>
@@ -109,11 +109,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="192" column="38" lean-forward="true" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#97#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2091">
+              <caret line="123" column="50" lean-forward="true" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -261,7 +267,16 @@
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="javascripts" type="462c0819:PsiDirectoryNode" />
               <item name="discourse" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gp_community_ads" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
+              <item name="discourse" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
@@ -280,7 +295,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563826785113" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563830036774" />
     <property name="last_opened_file_path" value="D:/Discourse/discourse-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -330,12 +345,12 @@
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
       <workItem from="1562018502513" duration="73660000" />
-      <workItem from="1562858960699" duration="82325000" />
+      <workItem from="1562858960699" duration="84375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158651000" />
+    <option name="totallyTimeSpent" value="160701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -381,9 +396,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.tx/config">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/gp_community_ads.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -534,7 +546,6 @@
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/adplugin-route-map.js.es6">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/header.html" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3613">
@@ -643,13 +654,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="123" column="50" lean-forward="true" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/codefund-ad.hbs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="192" column="38" lean-forward="true" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#97#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
         </state>
       </provider>
     </entry>

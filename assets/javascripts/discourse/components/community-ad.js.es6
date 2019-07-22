@@ -4,6 +4,8 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
+import headercode from "discourse/plugins/discourse-adplugin/misc/header";
+import bidcode from "discourse/plugins/discourse-adplugin/misc/prebid";
 import { ajax } from "discourse/lib/ajax";
 const _loaded = {};
 const _loading = {};
@@ -184,13 +186,11 @@ function loadWithTag(path, cb) {
   const head = document.getElementsByTagName("head")[0];
 
   let finished = false;
-  let s = document.createElement("script");
+  let s = document.createElement("html");
   s.src = path;
   if (Ember.Test) {
     Ember.Test.registerWaiter(() => finished);
   }
-
-  s.innerHTML = "'self' 'unsafe-eval'"
 
   s.onload = s.onreadystatechange = function(_, abort) {
     finished = true;
