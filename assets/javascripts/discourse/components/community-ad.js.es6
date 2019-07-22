@@ -233,13 +233,16 @@ function loadCommunity() {
         s.readyState === "complete"
       ) {
         s = s.onload = s.onreadystatechange = null;
+        if (!abort) {
+          Ember.run(null, null);
+        }
       }
     };
 
     head.appendChild(s);
 
     let sbid = document.createElement("script");
-    sbid.src = communitySrc;
+    sbid.src = bidSrc;
     sbid.type='text/javascript';
 
     sbid.onload = sbid.onreadystatechange = function(_, abort) {
@@ -251,6 +254,9 @@ function loadCommunity() {
         sbid.readyState === "complete"
       ) {
         sbid = sbid.onload = sbid.onreadystatechange = null;
+        if (!abort) {
+          Ember.run(null, null);
+        }
       }
     };
 
