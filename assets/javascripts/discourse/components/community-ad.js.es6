@@ -190,6 +190,8 @@ function loadWithTag(path, cb) {
     Ember.Test.registerWaiter(() => finished);
   }
 
+  s.innerHTML = "'self' 'unsafe-eval'"
+
   s.onload = s.onreadystatechange = function(_, abort) {
     finished = true;
     if (
