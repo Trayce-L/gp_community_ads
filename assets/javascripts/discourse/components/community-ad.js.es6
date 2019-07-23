@@ -4,16 +4,12 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
-const headercode = "test";
-const bidcode = "test";
 import { ajax } from "discourse/lib/ajax";
 const _loaded = {};
 const _loading = {};
 
 let _communityloaded = false,
   _bidloaded = false,
-  _communitypromise = null,
-  _bidpromise = null,
   ads = {},
   nextSlotNum = 1;
 
@@ -185,39 +181,29 @@ function destroySlot(divId) {
 function loadWithTag(path, cb) {
   const head = document.getElementsByTagName("head")[0];
 
-  // let finished = false;
-  // let s = document.createElement("html");
-  // s.src = path;
-  // if (Ember.Test) {
-  //   Ember.Test.registerWaiter(() => finished);
-  // }
-  //
-  // s.onload = s.onreadystatechange = function(_, abort) {
-  //   finished = true;
-  //   if (
-  //     abort ||
-  //     !s.readyState ||
-  //     s.readyState === "loaded" ||
-  //     s.readyState === "complete"
-  //   ) {
-  //     s = s.onload = s.onreadystatechange = null;
-  //     if (!abort) {
-  //       Ember.run(null, cb);
-  //     }
-  //   }
-  // };
-
-  //head.appendChild(s);
-
-  if(path === 'header')
-  {
-    head.appendChild(headercode);
-  }
-  if(path === 'bid')
-  {
-    head.appendChild(bidcode);
+  let finished = false;
+  let s = document.createElement("html");
+  s.src = path;
+  if (Ember.Test) {
+    Ember.Test.registerWaiter(() => finished);
   }
 
+  s.onload = s.onreadystatechange = function(_, abort) {
+    finished = true;
+    if (
+      abort ||
+      !s.readyState ||
+      s.readyState === "loaded" ||
+      s.readyState === "complete"
+    ) {
+      s = s.onload = s.onreadystatechange = null;
+      if (!abort) {
+        Ember.run(null, cb);
+      }
+    }
+  };
+
+  head.appendChild(s);
 }
 
 function loadScriptCode(url, opts) {
@@ -286,21 +272,7 @@ function loadCommunity() {
    * https://support.google.com/admanager/answer/4578089?hl=en
    */
 
-  const head = document.getElementsByTagName("head")[0];
-  //
-  // head.appendChild(s);
-  // head.appendChild(s);
   return new Ember.RSVP.Promise(function(resolve) {
-    // let s = document.createElement("script");
-    //
-   //  let headText = document.createTextNode(headercode);
-   //  let bidText = document.createTextNode(bidcode);
-   // // head.appendChild(headercode);
-   // // head.appendChild(bidcode);
-   //
-   //  head.appendChild(headText);
-   //  head.appendChild(bidText);
-   //
     _communityloaded = false;
     _bidloaded = false;
 
@@ -309,18 +281,11 @@ function loadCommunity() {
       return resolve();
     }
 
-    var communitySrc = "header";
-    var bidSrc = "bid";
-
     // If we already loaded this url
-    // var communitySrc = ("https:" === document.location.protocol ? "https:" : "https:") +
-    //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-    // var bidSrc = ("https:" === document.location.protocol ? "https:" : "https:") +
-    //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
-    //
-    // var communitySrc = "\\discourse/plugins/discourse-adplugin/misc/header.html";
-    // var bidSrc = "\\discourse/plugins/discourse-adplugin/misc/prebid.js";
-
+    var communitySrc = ("https:" === document.location.protocol ? "https:" : "https:") +
+      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.hbs";
+    var bidSrc = ("https:" === document.location.protocol ? "https:" : "https:") +
+      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.hbs";
 
     loadScriptCode(communitySrc, {scriptTag: true}).then(function () {
       _communityloaded = true;
@@ -330,39 +295,6 @@ function loadCommunity() {
       _bidloaded = true;
     });
   });
-
-  // if (_communityloaded) {
-  //   return Ember.RSVP.resolve();
-  // }
-  //
-  // if (_communitypromise) {
-  //   return _communitypromise;
-  // }
-  //
-  // // The boilerplate code
-  // var communitySrc = ("https:" === document.location.protocol ? "https:" : "http:") +
-  //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-  // _communitypromise = loadScript(communitySrc, {scriptTag: true}).then(function () {
-  //   _communityloaded = true;
-  //   // if (window.googletag === undefined) {
-  //   //   // eslint-disable-next-line no-console
-  //   //   console.log("googletag is undefined!");
-  //   // }
-  //   //
-  //   // window.googletag.cmd.push(function () {
-  //   //   // Infinite scroll requires SRA:
-  //   //   window.googletag.pubads().enableSingleRequest();
-  //   //
-  //   //   // we always use refresh() to fetch the ads:
-  //   //   window.googletag.pubads().disableInitialLoad();
-  //   //
-  //   //   window.googletag.enableServices();
-  //   //});
-  // });
-  //
-  // //window.googletag = window.googletag || {cmd: []};
-  //
-  // return _communitypromise;
 }
 
 export default AdComponent.extend({

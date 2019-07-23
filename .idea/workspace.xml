@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f5309ca-9f6b-4c31-81f4-349bb816ce58" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/javascripts/misc/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/templates/header.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/javascripts/misc/prebid.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/templates/prebid.hbs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,13 +44,13 @@
         <counts>
           <entry key="Gemfile" value="3" />
           <entry key="config" value="1" />
-          <entry key="es6" value="118" />
-          <entry key="hbs" value="46" />
+          <entry key="es6" value="125" />
+          <entry key="hbs" value="49" />
           <entry key="html" value="2" />
           <entry key="iml" value="1" />
           <entry key="js" value="2" />
           <entry key="md" value="1" />
-          <entry key="rb" value="24" />
+          <entry key="rb" value="29" />
           <entry key="scss" value="7" />
           <entry key="ts" value="2" />
           <entry key="xml" value="4" />
@@ -56,14 +59,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ECMAScript 6" value="118" />
+          <entry key="ECMAScript 6" value="125" />
           <entry key="HTML" value="2" />
-          <entry key="Handlebars/Mustache" value="45" />
+          <entry key="Handlebars/Mustache" value="48" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Ruby" value="25" />
+          <entry key="Ruby" value="30" />
           <entry key="SCSS" value="7" />
           <entry key="TypeScript" value="2" />
           <entry key="XML" value="4" />
@@ -72,17 +75,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="es6" value="2112" />
+          <entry key="es6" value="2116" />
           <entry key="hbs" value="80" />
           <entry key="html" value="6" />
+          <entry key="rb" value="71" />
           <entry key="yml" value="169" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ECMAScript 6" value="2112" />
+          <entry key="ECMAScript 6" value="2116" />
           <entry key="HTML" value="6" />
           <entry key="Handlebars/Mustache" value="80" />
+          <entry key="Ruby" value="71" />
           <entry key="YAML" value="169" />
         </counts>
       </usages-collector>
@@ -111,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            <state relative-caret-position="799">
+              <caret line="203" column="4" lean-forward="true" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
               </folding>
@@ -121,10 +126,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/header.html">
+        <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads-show.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="59" lean-forward="true" selection-end-line="170" selection-end-column="28" />
+            <state relative-caret-position="187">
+              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/javascripts/initializers/initialize-ad-plugin.js.es6">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="59">
+              <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/header.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -206,7 +238,6 @@
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/google-dfp-ad.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/house-ad.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/house-ads-list-setting.js.es6" />
-        <option value="$PROJECT_DIR$/plugin.rb" />
         <option value="$PROJECT_DIR$/config/locales/client.en.yml" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/community2-ad.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community2-ad.hbs" />
@@ -214,6 +245,7 @@
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs" />
         <option value="$PROJECT_DIR$/assets/javascripts/misc/header.html" />
+        <option value="$PROJECT_DIR$/plugin.rb" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" />
       </list>
     </option>
@@ -247,6 +279,17 @@
             <path>
               <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
               <item name="gp_community_ads" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gp_community_ads" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gp_community_ads" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -261,14 +304,6 @@
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="javascripts" type="462c0819:PsiDirectoryNode" />
               <item name="discourse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gp_community_ads" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-              <item name="discourse" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
@@ -285,14 +320,7 @@
               <item name="javascripts" type="462c0819:PsiDirectoryNode" />
               <item name="discourse" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gp_community_ads" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gp_community_ads" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-              <item name="misc" type="462c0819:PsiDirectoryNode" />
+              <item name="connectors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -304,7 +332,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563831678883" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563913357972" />
     <property name="last_opened_file_path" value="D:/Discourse/discourse-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -312,6 +340,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\gp_community_ads\assets\javascripts\discourse\templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GitHub\gp_community_ads\assets\javascripts\discourse\templates\components" />
       <recent name="D:\GitHub\gp_community_ads\assets\javascripts\discourse\components" />
@@ -354,12 +385,12 @@
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
       <workItem from="1562018502513" duration="73660000" />
-      <workItem from="1562858960699" duration="86305000" />
+      <workItem from="1562858960699" duration="94463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162631000" />
+    <option name="totallyTimeSpent" value="170789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -373,7 +404,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32997677" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39969015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -405,9 +436,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/gp_community_ads.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -437,9 +465,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/codefund/post-bottom.hbs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/connectors/post-bottom/discourse-adplugin.hbs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/house-ads-setting.js.es6">
@@ -495,19 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads.js.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads-index.js.es6">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads-show.js.es6">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/codefund/topic-list-top.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -550,9 +562,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/components/ad-slot.hbs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/adplugin-route-map.js.es6">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
@@ -613,30 +622,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/initializers/initialize-ad-plugin.js.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="60" lean-forward="true" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-component.js.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugin.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="59" column="30" lean-forward="true" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/prebid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6">
@@ -666,17 +656,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/javascripts/misc/header.html">
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/prebid.hbs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/adplugin-route-map.js.es6">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="59" lean-forward="true" selection-end-line="170" selection-end-column="28" />
+        <state relative-caret-position="102">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads-index.js.es6">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/routes/admin-plugins-house-ads-show.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/house_ad.rb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/initializers/initialize-ad-plugin.js.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/connectors/post-bottom/discourse-adplugin.hbs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/header.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        <state relative-caret-position="799">
+          <caret line="203" column="4" lean-forward="true" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
