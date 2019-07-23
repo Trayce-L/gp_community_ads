@@ -344,9 +344,6 @@ export default AdComponent.extend({
         //publisherId = settings.dfp_publisher_id;
         //return settings[DESKTOP_SETTINGS[placement].code];
         if (placement === "topic-list-top") {
-          if (fs.existsSync(path)) {
-            //file exists
-          }
           return `${this.siteSettings.community_topic_list_top_code}`;
         }
         if (placement === "topic-above-post-stream") {
