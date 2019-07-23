@@ -178,94 +178,6 @@ function destroySlot(divId) {
   }
 }
 
-function loadWithTag(path, cb) {
-  const head = document.getElementsByTagName("head")[0];
-
-  let finished = false;
-  let s = document.createElement("html");
-  s.src = path;
-  if (Ember.Test) {
-    Ember.Test.registerWaiter(() => finished);
-  }
-
-  s.onload = s.onreadystatechange = function(_, abort) {
-    finished = true;
-    if (
-      abort ||
-      !s.readyState ||
-      s.readyState === "loaded" ||
-      s.readyState === "complete"
-    ) {
-      s = s.onload = s.onreadystatechange = null;
-      if (!abort) {
-        Ember.run(null, cb);
-      }
-    }
-  };
-
-  head.appendChild(s);
-}
-
-function loadScriptCode(url, opts) {
-  // TODO: Remove this once plugins have been updated not to use it:
-  if (url === "defer/html-sanitizer-bundle") {
-    return Ember.RSVP.Promise.resolve();
-  }
-
-  opts = opts || {};
-
-  // Scripts should always load from CDN
-  // CSS is type text, to accept it from a CDN we would need to handle CORS
-  url = opts.css ? Discourse.getURL(url) : Discourse.getURLWithCDN(url);
-
-  $("script").each((i, tag) => {
-    const src = tag.getAttribute("src");
-
-    if (src && src !== url && !_loading[src]) {
-      _loaded[src] = true;
-    }
-  });
-
-  return new Ember.RSVP.Promise(function(resolve) {
-    // If we already loaded this url
-    if (_loaded[url]) {
-      return resolve();
-    }
-    if (_loading[url]) {
-      return _loading[url].then(resolve);
-    }
-
-    let done;
-    _loading[url] = new Ember.RSVP.Promise(function(_done) {
-      done = _done;
-    });
-
-    _loading[url].then(function() {
-      delete _loading[url];
-    });
-
-    const cb = function(data) {
-      if (opts && opts.css) {
-        $("head").append("<style>" + data + "</style>");
-      }
-      done();
-      resolve();
-      _loaded[url] = true;
-    };
-
-    if (opts.css) {
-      ajax({
-        url: url,
-        dataType: "text",
-        cache: true
-      }).then(cb);
-    } else {
-      // Always load JavaScript with script tag to avoid Content Security Policy inline violations
-      loadWithTag(url, cb);
-    }
-  });
-}
-
 function loadCommunity() {
   /**
    * Refer to this article for help:
@@ -287,11 +199,11 @@ function loadCommunity() {
     var bidSrc = ("https:" === document.location.protocol ? "https:" : "https:") +
       "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.hbs";
 
-    loadScriptCode(communitySrc, {scriptTag: true}).then(function () {
+    loadScript(communitySrc, {scriptTag: true}).then(function () {
       _communityloaded = true;
     });
 
-    loadScriptCode(bidSrc, {scriptTag: true}).then(function () {
+    loadScript(bidSrc, {scriptTag: true}).then(function () {
       _bidloaded = true;
     });
   });
