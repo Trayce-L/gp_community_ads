@@ -195,9 +195,9 @@ function loadCommunity() {
 
     // If we already loaded this url
     var communitySrc = ("https:" === document.location.protocol ? "https:" : "https:") +
-      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.hbs";
+      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
     var bidSrc = ("https:" === document.location.protocol ? "https:" : "https:") +
-      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.hbs";
+      "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js";
 
     loadScript(communitySrc, {scriptTag: true}).then(function () {
       _communityloaded = true;
