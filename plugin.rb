@@ -75,6 +75,8 @@ end
 extend_content_security_policy(
     script_src: ['https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/prebid.js',
                   'https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html',
-                  'http://www.googletagservices.com/tag/js/gpt.js',
-                  'http://c.amazon-adsystem.com/aax2/apstag.js'],
+                  'http://www.googletagservices.com/',
+                  'http://c.amazon-adsystem.com/',
+    'https://securepubads.g.doubleclick.net/',
+    'https://adservice.google.com/'],
 )

@@ -75,7 +75,7 @@
           <entry key="es6" value="2121" />
           <entry key="hbs" value="80" />
           <entry key="html" value="6" />
-          <entry key="rb" value="107" />
+          <entry key="rb" value="114" />
           <entry key="yml" value="169" />
         </counts>
       </usages-collector>
@@ -84,7 +84,7 @@
           <entry key="ECMAScript 6" value="2121" />
           <entry key="HTML" value="6" />
           <entry key="Handlebars/Mustache" value="80" />
-          <entry key="Ruby" value="107" />
+          <entry key="Ruby" value="114" />
           <entry key="YAML" value="169" />
         </counts>
       </usages-collector>
@@ -116,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugin.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1192">
-              <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+            <state relative-caret-position="1209">
+              <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -272,7 +272,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563985732466" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563985967730" />
     <property name="last_opened_file_path" value="D:/Discourse/discourse-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -325,12 +325,12 @@
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
       <workItem from="1562018502513" duration="73660000" />
-      <workItem from="1562858960699" duration="98982000" />
+      <workItem from="1562858960699" duration="99216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175308000" />
+    <option name="totallyTimeSpent" value="175542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
@@ -651,8 +651,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugin.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1192">
-          <caret line="78" column="65" selection-start-line="78" selection-start-column="65" selection-end-line="78" selection-end-column="65" />
+        <state relative-caret-position="1209">
+          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
         </state>
       </provider>
     </entry>
