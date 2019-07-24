@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f5309ca-9f6b-4c31-81f4-349bb816ce58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" beforeDir="false" afterPath="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.rb" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +75,7 @@
           <entry key="es6" value="2121" />
           <entry key="hbs" value="80" />
           <entry key="html" value="6" />
-          <entry key="rb" value="71" />
+          <entry key="rb" value="73" />
           <entry key="yml" value="169" />
         </counts>
       </usages-collector>
@@ -84,7 +84,7 @@
           <entry key="ECMAScript 6" value="2121" />
           <entry key="HTML" value="6" />
           <entry key="Handlebars/Mustache" value="80" />
-          <entry key="Ruby" value="71" />
+          <entry key="Ruby" value="73" />
           <entry key="YAML" value="169" />
         </counts>
       </usages-collector>
@@ -110,10 +110,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
+            <state relative-caret-position="190">
               <caret line="197" column="135" selection-start-line="197" selection-start-column="135" selection-end-line="197" selection-end-column="135" />
               <folding>
                 <element signature="e#0#97#0" expanded="true" />
@@ -140,11 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plugin.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+            <state relative-caret-position="1158">
+              <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -174,7 +174,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sitese</find>
       <find>code</find>
       <find>header</find>
       <find>head</find>
@@ -204,6 +203,7 @@
       <find>desktop</find>
       <find>loadGoogle</find>
       <find>&quot;</find>
+      <find>fs</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -233,8 +233,8 @@
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/ad-slot.js.es6" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/templates/components/community-ad.hbs" />
         <option value="$PROJECT_DIR$/assets/javascripts/misc/header.html" />
-        <option value="$PROJECT_DIR$/plugin.rb" />
         <option value="$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6" />
+        <option value="$PROJECT_DIR$/plugin.rb" />
       </list>
     </option>
   </component>
@@ -245,10 +245,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1456" />
+    <option name="x" value="4122" />
+    <option name="y" value="310" />
+    <option name="width" value="1022" />
+    <option name="height" value="766" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -320,7 +320,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563916751392" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563983474333" />
     <property name="last_opened_file_path" value="D:/Discourse/discourse-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -373,18 +373,18 @@
       <workItem from="1562015946991" duration="162000" />
       <workItem from="1562016133568" duration="2042000" />
       <workItem from="1562018502513" duration="73660000" />
-      <workItem from="1562858960699" duration="96462000" />
+      <workItem from="1562858960699" duration="97701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172788000" />
+    <option name="totallyTimeSpent" value="174027000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
+    <frame x="2552" y="-8" width="2576" height="1426" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14904611" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14904611" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -680,13 +680,6 @@
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/connectors/post-bottom/discourse-adplugin.hbs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/plugin.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/templates/header.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -696,11 +689,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/javascripts/discourse/components/community-ad.js.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
+        <state relative-caret-position="190">
           <caret line="197" column="135" selection-start-line="197" selection-start-column="135" selection-end-line="197" selection-end-column="135" />
           <folding>
             <element signature="e#0#97#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1158">
+          <caret line="74" column="31" lean-forward="true" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
         </state>
       </provider>
     </entry>
