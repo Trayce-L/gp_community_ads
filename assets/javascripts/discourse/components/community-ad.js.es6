@@ -365,7 +365,7 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
-    loadCommunity().then(function () {
+    //loadCommunity().then(function () {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
       window.googletag.cmd.push(() => {
@@ -384,7 +384,7 @@ export default AdComponent.extend({
           window.googletag.pubads().refresh([slot.ad]);
         }
       });
-    });
+    //});
   },
 
   willRender() {
