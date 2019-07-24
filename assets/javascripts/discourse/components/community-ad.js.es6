@@ -365,6 +365,9 @@ export default AdComponent.extend({
     // if (!this.get("showAd")) {
     //     return;
     // }
+    
+    window.googletag = window.googletag || { cmd: [] };
+
     //loadCommunity().then(function () {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
