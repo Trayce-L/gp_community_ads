@@ -78,5 +78,6 @@ extend_content_security_policy(
                   'http://www.googletagservices.com/',
                   'http://c.amazon-adsystem.com/',
     'https://securepubads.g.doubleclick.net/',
-    'https://adservice.google.com/'],
+    'https://adservice.google.com/',
+    '\'unsafe-inline\''],
 )
