@@ -4,7 +4,6 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 import loadScript from "discourse/lib/load-script";
-import { ajax } from "discourse/lib/ajax";
 const _loaded = {};
 const _loading = {};
 
