@@ -74,7 +74,8 @@ end
 
 extend_content_security_policy(
     script_src: ['https://gamepress.gg/',
-                  'https://gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html',
+                 'https://testcommunity.gamepress.wiki/',
+                 'https://community.gamepress.com/',
                   'http://www.googletagservices.com/',
                   'http://c.amazon-adsystem.com/',
                   'https://securepubads.g.doubleclick.net/',
