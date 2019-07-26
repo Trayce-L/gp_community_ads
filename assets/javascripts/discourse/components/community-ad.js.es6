@@ -289,21 +289,21 @@ export default AdComponent.extend({
     "publisherId",
     "showToTrustLevel",
     "showToGroups",
-    //"showAfterPost",
+    "showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
     showToTrustLevel,
     showToGroups,
-    //showAfterPost,
+    showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
       showToTrustLevel &&
       showToGroups &&
-      //showAfterPost &&
+      showAfterPost &&
       showOnCurrentPage
     );
   },
@@ -337,26 +337,26 @@ export default AdComponent.extend({
 
   @on("didUpdate")
   updated() {
-    if (this.get("listLoading") || !this.shouldRefreshAd()) {
-      return;
-    }
-
-    let slot = ads[this.get("divId")];
-    if (!(slot && slot.ad)) {
-      return;
-    }
-
-    let ad = slot.ad,
-      categorySlug = this.get("currentCategorySlug");
-
-    if (this.get("loadedGoogletag")) {
-      //console.log(`refresh(${this.get("divId")}) from updated()`);
-      this.set("lastAdRefresh", new Date());
-      window.googletag.cmd.push(() => {
-        ad.setTargeting("discourse-category", categorySlug || "0");
-        window.googletag.pubads().refresh([ad]);
-      });
-    }
+    // if (this.get("listLoading") || !this.shouldRefreshAd()) {
+    //   return;
+    // }
+    //
+    // let slot = ads[this.get("divId")];
+    // if (!(slot && slot.ad)) {
+    //   return;
+    // }
+    //
+    // let ad = slot.ad,
+    //   categorySlug = this.get("currentCategorySlug");
+    //
+    // if (this.get("loadedGoogletag")) {
+    //   //console.log(`refresh(${this.get("divId")}) from updated()`);
+    //   this.set("lastAdRefresh", new Date());
+    //   window.googletag.cmd.push(() => {
+    //     ad.setTargeting("discourse-category", categorySlug || "0");
+    //     window.googletag.pubads().refresh([ad]);
+    //   });
+    // }
   },
 
   @on("didInsertElement")
