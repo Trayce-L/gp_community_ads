@@ -289,21 +289,21 @@ export default AdComponent.extend({
     "publisherId",
     "showToTrustLevel",
     "showToGroups",
-    "showAfterPost",
+    //"showAfterPost",
     "showOnCurrentPage"
   )
   showAd(
     publisherId,
     showToTrustLevel,
     showToGroups,
-    showAfterPost,
+    //showAfterPost,
     showOnCurrentPage
   ) {
     return (
       publisherId &&
       showToTrustLevel &&
       showToGroups &&
-      showAfterPost &&
+      //showAfterPost &&
       showOnCurrentPage
     );
   },
