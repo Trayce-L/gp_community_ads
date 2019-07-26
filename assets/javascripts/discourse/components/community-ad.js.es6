@@ -337,26 +337,26 @@ export default AdComponent.extend({
 
   @on("didUpdate")
   updated() {
-    // if (this.get("listLoading") || !this.shouldRefreshAd()) {
-    //   return;
-    // }
-    //
-    // let slot = ads[this.get("divId")];
-    // if (!(slot && slot.ad)) {
-    //   return;
-    // }
-    //
-    // let ad = slot.ad,
-    //   categorySlug = this.get("currentCategorySlug");
-    //
-    // if (this.get("loadedGoogletag")) {
-    //   //console.log(`refresh(${this.get("divId")}) from updated()`);
-    //   this.set("lastAdRefresh", new Date());
-    //   window.googletag.cmd.push(() => {
-    //     ad.setTargeting("discourse-category", categorySlug || "0");
-    //     window.googletag.pubads().refresh([ad]);
-    //   });
-    // }
+    if (this.get("listLoading") || !this.shouldRefreshAd()) {
+      return;
+    }
+
+    let slot = ads[this.get("divId")];
+    if (!(slot && slot.ad)) {
+      return;
+    }
+
+    let ad = slot.ad,
+      categorySlug = this.get("currentCategorySlug");
+
+    if (this.get("loadedGoogletag")) {
+      //console.log(`refresh(${this.get("divId")}) from updated()`);
+      this.set("lastAdRefresh", new Date());
+      window.googletag.cmd.push(() => {
+        ad.setTargeting("discourse-category", categorySlug || "0");
+        window.googletag.pubads().refresh([ad]);
+      });
+    }
   },
 
   @on("didInsertElement")
@@ -383,7 +383,7 @@ export default AdComponent.extend({
           // and after the slot div is in the page.
           window.googletag.display(this.get("divId"));
           //= console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
-          window.googletag.pubads().refresh([slot.ad]);
+          //window.googletag.pubads().refresh([slot.ad]);
         }
       });
     });
