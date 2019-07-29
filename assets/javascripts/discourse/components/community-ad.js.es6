@@ -367,7 +367,7 @@ export default AdComponent.extend({
 
     //window.googletag = window.googletag || { cmd: [] };
 
-    loadCommunity().then(function () {
+    //loadCommunity().then(function () {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
       window.googletag.cmd.push(() => {
@@ -383,10 +383,10 @@ export default AdComponent.extend({
           // and after the slot div is in the page.
           window.googletag.display(this.get("divId"));
           //= console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
-          //window.googletag.pubads().refresh([slot.ad]);
+          window.googletag.pubads().refresh([slot.ad]);
         }
       });
-    });
+    //});
   },
 
   willRender() {
