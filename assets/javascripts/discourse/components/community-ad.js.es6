@@ -173,8 +173,9 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
 }
 
 function destroySlot(divId) {
-  if (ads[divId] && window.googletag) {
-    window.googletag.destroySlots([ads[divId].ad]);
+  if (ads[divId]) {
+    //todo: deleteion code
+    //window.googletag.destroySlots([ads[divId].ad]);
     delete ads[divId];
   }
 }
