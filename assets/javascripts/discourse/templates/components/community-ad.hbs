@@ -1,10 +1,15 @@
 {{#if showAd}}
     {{#if site.mobileView}}
-        <!--<div class="google-dfp-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>-->
+        <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
         <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-            <!--<script>-->
-                <!--if(detectWidth() <= 980) { googletag.cmd.push(function() {googletag.display({{divId}});});}-->
-            <!--</script>-->
+            <script>
+                if(detectWidth() <= 980) {
+                    googletag.cmd.push(function() {
+                        googletag.display( {{divId}} );
+                    }
+                );
+                }
+            </script>
         </div>
     {{else}}
         <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
@@ -12,7 +17,7 @@
             <script>
                 if(detectWidth() > 980) {
                   googletag.cmd.push(function() {
-                    googletag.display({{divId}});
+                    googletag.display( {{divId}} );
                   }
                   );
                 }
