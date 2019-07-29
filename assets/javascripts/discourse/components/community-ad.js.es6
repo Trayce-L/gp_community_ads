@@ -164,7 +164,7 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   //     ad.setTargeting("discourse-category", categoryTarget);
   // }
 
-  ad.addService(window.googletag.pubads());
+  //ad.addService(window.googletag.pubads());
 
   ads[divId] = {ad: ad, width: size.width, height: size.height};
   return ads[divId];
