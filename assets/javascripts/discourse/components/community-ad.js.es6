@@ -148,11 +148,13 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     config = DESKTOP_SETTINGS[placement];
   }
 
-  ad = window.googletag.defineSlot(
-    /*"/" + publisherId + */"/" + settings[config.code],
-    [size.width, size.height],
-    divId
-  );
+  // ad = window.googletag.defineSlot(
+  //   /*"/" + publisherId + */"/" + settings[config.code],
+  //   [size.width, size.height],
+  //   divId
+  // );
+
+  ad = divId;
 
   // custom_targeting(
   //     keyParse(settings[config.targeting_keys]),
@@ -164,7 +166,7 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   //     ad.setTargeting("discourse-category", categoryTarget);
   // }
 
-  ad.addService(window.googletag.pubads());
+  //ad.addService(window.googletag.pubads());
 
   ads[divId] = {ad: ad, width: size.width, height: size.height};
   return ads[divId];
@@ -352,10 +354,12 @@ export default AdComponent.extend({
     if (this.get("loadedGoogletag")) {
       //console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
-      window.googletag.cmd.push(() => {
-        ad.setTargeting("discourse-category", categorySlug || "0");
-        window.googletag.pubads().refresh([ad]);
-      });
+      // window.googletag.cmd.push(() => {
+      //   ad.setTargeting("discourse-category", categorySlug || "0");
+      //   window.googletag.pubads().refresh([ad]);
+      // });
+
+      //todo: create refresh code
     }
   },
 
@@ -370,7 +374,7 @@ export default AdComponent.extend({
     //loadCommunity().then(function () {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
-      window.googletag.cmd.push(() => {
+      //window.googletag.cmd.push(() => {
         let slot = defineSlot(
           this.get("divId"),
           this.get("placement"),
@@ -378,14 +382,14 @@ export default AdComponent.extend({
           this.site.mobileView,
           this.get("currentCategorySlug") || "0"
         );
-        if (slot && slot.ad) {
+        //if (slot && slot.ad) {
           // Display has to be called before refresh
           // and after the slot div is in the page.
-          window.googletag.display(this.get("divId"));
+          //window.googletag.display(this.get("divId"));
           //= console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
-          window.googletag.pubads().refresh([slot.ad]);
-        }
-      });
+          //window.googletag.pubads().refresh([slot.ad]);
+        //}
+      //});
     //});
   },
 
