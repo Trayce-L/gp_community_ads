@@ -273,6 +273,74 @@ export default AdComponent.extend({
     }
   },
 
+  @computed("placement", "postNumber", "site.mobileView")
+  divId_da(placement, postNumber, isMobile) {
+    let slotNum = getNextSlotNum();
+    if (postNumber) {
+      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
+    } else {
+      if (isMobile) {
+      } else {
+        if (placement === "topic-list-top") {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  },
+
+  @computed("placement", "postNumber", "site.mobileView")
+  divId_db(placement, postNumber, isMobile) {
+    let slotNum = getNextSlotNum();
+    if (postNumber) {
+      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
+    } else {
+      if (isMobile) {
+      } else {
+        if (placement === "topic-above-post-stream") {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  },
+
+  @computed("placement", "postNumber", "site.mobileView")
+  divId_dc(placement, postNumber, isMobile) {
+    let slotNum = getNextSlotNum();
+    if (postNumber) {
+      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
+    } else {
+      if (isMobile) {
+      } else {
+        if (placement === "topic-above-suggested") {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  },
+
+  @computed("placement", "postNumber", "site.mobileView")
+  divId_dd(placement, postNumber, isMobile) {
+    let slotNum = getNextSlotNum();
+    if (postNumber) {
+      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
+    } else {
+      if (isMobile) {
+      } else {
+        if (placement === "post-bottom") {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  },
+
   @computed("placement", "showAd")
   adUnitClass(placement, showAd) {
     return showAd ? `community-ad-${placement}` : "";
