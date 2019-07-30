@@ -32,6 +32,13 @@
                     });
                 },
             });
+            api.onPageChange((url) => {
+                if (url.includes('/c/redirect-politifora')) {
+                     window.googletag.cmd.push(() => {
+                        window.googletag.pubads().refresh();
+                    });
+                }
+            });
             </script>
         {{else if divId_dd}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
