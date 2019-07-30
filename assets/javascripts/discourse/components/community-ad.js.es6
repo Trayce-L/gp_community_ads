@@ -242,32 +242,32 @@ export default AdComponent.extend({
         //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
         //return settings[MOBILE_SETTINGS[placement].code];
         if (placement === "topic-list-top") {
-          return `${this.siteSettings.community_mobile_topic_list_top_code}`;
+          return "<script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>"//`${this.siteSettings.community_mobile_topic_list_top_code}`;
         }
         if (placement === "topic-above-post-stream") {
-          return `${this.siteSettings.community_mobile_topic_above_post_stream_code}`;
+          return "<script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_B');});}</script>"//`${this.siteSettings.community_mobile_topic_above_post_stream_code}`;
         }
         if (placement === "topic-above-suggested") {
-          return `${this.siteSettings.community_mobile_topic_above_suggested_code}`;
+          return "<script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_C');});}</script>"//`${this.siteSettings.community_mobile_topic_above_suggested_code}`;
         }
         if (placement === "post-bottom") {
-          return `${this.siteSettings.community_mobile_post_bottom_code}`;
+          return "<script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_D');});}</script>"//`${this.siteSettings.community_mobile_post_bottom_code}`;
         }
 
       } else {
         //publisherId = settings.dfp_publisher_id;
         //return settings[DESKTOP_SETTINGS[placement].code];
         if (placement === "topic-list-top") {
-          return `${this.siteSettings.community_topic_list_top_code}`;
+          return "<script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>"//`${this.siteSettings.community_topic_list_top_code}`;
         }
         if (placement === "topic-above-post-stream") {
-          return `${this.siteSettings.community_topic_above_post_stream_code}`;
+          return "<script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_B');});}</script>"//`${this.siteSettings.community_topic_above_post_stream_code}`;
         }
         if (placement === "topic-above-suggested") {
-          return `${this.siteSettings.community_topic_above_suggested_code}`;
+          return "<script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_C');});}</script>"//`${this.siteSettings.community_topic_above_suggested_code}`;
         }
         if (placement === "post-bottom") {
-          return `${this.siteSettings.community_post_bottom_code}`;
+          return "<script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_D');});}</script>"//`${this.siteSettings.community_post_bottom_code}`;
         }
       }
     }
@@ -275,7 +275,6 @@ export default AdComponent.extend({
 
   @computed("placement", "postNumber", "site.mobileView")
   divId_da(placement, postNumber, isMobile) {
-    let slotNum = getNextSlotNum();
     if (postNumber) {
       return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
     } else {
@@ -292,7 +291,6 @@ export default AdComponent.extend({
 
   @computed("placement", "postNumber", "site.mobileView")
   divId_db(placement, postNumber, isMobile) {
-    let slotNum = getNextSlotNum();
     if (postNumber) {
       return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
     } else {
@@ -309,7 +307,6 @@ export default AdComponent.extend({
 
   @computed("placement", "postNumber", "site.mobileView")
   divId_dc(placement, postNumber, isMobile) {
-    let slotNum = getNextSlotNum();
     if (postNumber) {
       return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
     } else {
@@ -326,7 +323,6 @@ export default AdComponent.extend({
 
   @computed("placement", "postNumber", "site.mobileView")
   divId_dd(placement, postNumber, isMobile) {
-    let slotNum = getNextSlotNum();
     if (postNumber) {
       return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
     } else {
