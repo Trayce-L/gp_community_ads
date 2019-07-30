@@ -9,6 +9,27 @@
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
             <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
             </div>
+            <script type="text/discourse-plugin">
+            const TopicRoute = require("discourse/routes/topic").default;
+
+            TopicRoute.reopen({
+                activate: function() {
+                    this._super();
+                    Em.run.next(function() {
+                        window.googletag.cmd.push(() => {
+                            window.googletag.pubads().refresh();
+                        });
+                    });
+                },
+            });
+            api.onPageChange((url) => {
+                if (url.includes('/c/redirect-politifora')) {
+                     window.googletag.cmd.push(() => {
+                        window.googletag.pubads().refresh();
+                    });
+                }
+            });
+            </script>
         {{else if divId_db}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
