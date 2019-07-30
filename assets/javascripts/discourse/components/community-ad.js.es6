@@ -263,53 +263,37 @@ export default AdComponent.extend({
     }
   },
 
-  @computed("placement", "postNumber", "site.mobileView")
-  divId_da(placement, postNumber, isMobile) {
-    if (postNumber) {
-      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
-    } else {
-      if (placement === "topic-list-top") {
-        return true;
-      }
+  @computed("placement")
+  divId_da(placement) {
+    if (placement === "topic-list-top") {
+      return true;
     }
 
     return false;
   },
 
-  @computed("placement", "postNumber", "site.mobileView")
-  divId_dc(placement, postNumber, isMobile) {
-    if (postNumber) {
-      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
-    } else {
-      if (placement === "topic-above-post-stream") {
-        return true;
-      }
+  @computed("placement")
+  divId_dc(placement) {
+    if (placement === "topic-above-post-stream") {
+      return true;
     }
 
     return false;
   },
 
-  @computed("placement", "postNumber", "site.mobileView")
-  divId_dd(placement, postNumber, isMobile) {
-    if (postNumber) {
-      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
-    } else {
-      if (placement === "topic-above-suggested") {
-        return true;
-      }
+  @computed("placement")
+  divId_dd(placement) {
+    if (placement === "topic-above-suggested") {
+      return true;
     }
 
     return false;
   },
 
-  @computed("placement", "postNumber", "site.mobileView")
-  divId_db(placement, postNumber, isMobile) {
-    if (postNumber) {
-      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
-    } else {
-      if (placement === "post-bottom") {
-        return true;
-      }
+  @computed("placement")
+  divId_db(placement) {
+    if (placement === "post-bottom") {
+      return true;
     }
 
     return false;
@@ -397,12 +381,12 @@ export default AdComponent.extend({
     if (this.get("loadedGoogletag")) {
       //console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
-      window.googletag.cmd.push(() => {
-        ad.setTargeting("discourse-category", categorySlug || "0");
-        window.googletag.pubads().refresh([ad]);
-      });
-
-      //todo: create refresh code
+      if(this.divId_dc()) {
+        window.googletag.cmd.push(() => {
+          ad.setTargeting("discourse-category", categorySlug || "0");
+          window.googletag.pubads().refresh([ad]);
+        });
+      }
     }
   },
 
