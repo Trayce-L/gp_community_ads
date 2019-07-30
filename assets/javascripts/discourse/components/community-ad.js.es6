@@ -384,7 +384,7 @@ export default AdComponent.extend({
       if(this.divId_dc()) {
         window.googletag.cmd.push(() => {
           ad.setTargeting("discourse-category", categorySlug || "0");
-          window.googletag.pubads().refresh([ad]);
+          window.googletag.pubads().refresh();
         });
       }
     }
