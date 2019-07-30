@@ -6,8 +6,14 @@
         </div>
     {{else}}
         <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-        <div id="community-ad" style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-            {{divId}}
+        <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
+            {{#if divId_da}}
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
+            {{else if divId_dc}}
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_C');});}</script>
+            {{else}}
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_B');});}</script>
+            {{/if}}
         </div>
     {{/if}}
 {{/if}}
