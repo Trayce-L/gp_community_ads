@@ -370,21 +370,23 @@ export default AdComponent.extend({
       return;
     }
 
-    let slot = ads[this.get("divId")];
-    if (!(slot && slot.ad)) {
-      return;
-    }
+    // let slot = ads[this.get("divId")];
+    // if (!(slot && slot.ad)) {
+    //   return;
+    // }
 
-    let ad = '/' + 'dfpNetwork' + '/' + slot.ad,
-      categorySlug = this.get("currentCategorySlug");
+    //let ad = '/' + 'dfpNetwork' + '/' + slot.ad,
+      //categorySlug = this.get("currentCategorySlug");
 
     if (this.get("loadedGoogletag")) {
       //console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
-      window.googletag.cmd.push(() => {
-        ad.setTargeting("discourse-category", categorySlug || "0");
-        window.googletag.pubads().refresh();
-      });
+      if(this.get('divId_dc')) {
+        window.googletag.cmd.push(() => {
+          //ad.setTargeting("discourse-category", categorySlug || "0");
+          window.googletag.pubads().refresh();
+        });
+      }
     }
   },
 
