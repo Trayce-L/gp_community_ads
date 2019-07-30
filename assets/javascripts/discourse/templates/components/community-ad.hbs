@@ -26,4 +26,18 @@
             </div>
         {{/if}}
     {{/if}}
+    <script type="text/discourse-plugin" version="0.8.18">
+    const TopicRoute = require("discourse/routes/topic").default;
+
+    TopicRoute.reopen({
+        activate: function() {
+            this._super();
+            Em.run.next(function() {
+                window.googletag.cmd.push(() => {
+                    window.googletag.pubads().refresh();
+                });
+            });
+        },
+    });
+    </script>
 {{/if}}
