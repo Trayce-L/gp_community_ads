@@ -137,6 +137,11 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     return ads[divId];
   }
 
+  this.get("divId_da");
+  this.get("divId_db");
+  this.get("divId_dc");
+  this.get("divId_dd");
+
   let ad, config, publisherId;
   let size = getWidthAndHeight(placement, settings, isMobile);
 
