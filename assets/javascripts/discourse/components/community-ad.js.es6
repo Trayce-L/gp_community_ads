@@ -233,42 +233,32 @@ export default AdComponent.extend({
 
   @computed("placement", "postNumber", "site.mobileView")
   divId(placement, postNumber, isMobile) {
-    let slotNum = getNextSlotNum();
-    if (postNumber) {
-      return null;//`div-ad-${slotNum}-${placement}-${postNumber}`;
-    } else {
-      //return `${DESKTOP_SETTINGS[placement].code}`;//`div-ad-${slotNum}-${placement}`;
-      if (isMobile) {
-        //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
-        //return settings[MOBILE_SETTINGS[placement].code];
-        if (placement === "topic-list-top") {
-          return `${this.siteSettings.community_mobile_topic_list_top_code}`;
-        }
-        if (placement === "topic-above-post-stream") {
-          return `${this.siteSettings.community_mobile_topic_above_post_stream_code}`;
-        }
-        if (placement === "topic-above-suggested") {
-          return `${this.siteSettings.community_mobile_topic_above_suggested_code}`;
-        }
-        if (placement === "post-bottom") {
-          return `${this.siteSettings.community_mobile_post_bottom_code}`;
-        }
+    if (isMobile) {
+      if (placement === "topic-list-top") {
+        return `${this.siteSettings.community_mobile_topic_list_top_code}`;
+      }
+      if (placement === "topic-above-post-stream") {
+        return `${this.siteSettings.community_mobile_topic_above_post_stream_code}`;
+      }
+      if (placement === "topic-above-suggested") {
+        return `${this.siteSettings.community_mobile_topic_above_suggested_code}`;
+      }
+      if (placement === "post-bottom") {
+        return `${this.siteSettings.community_mobile_post_bottom_code}`;
+      }
 
-      } else {
-        //publisherId = settings.dfp_publisher_id;
-        //return settings[DESKTOP_SETTINGS[placement].code];
-        if (placement === "topic-list-top") {
-          return `${this.siteSettings.community_topic_list_top_code}`;
-        }
-        if (placement === "topic-above-post-stream") {
-          return `${this.siteSettings.community_topic_above_post_stream_code}`;
-        }
-        if (placement === "topic-above-suggested") {
-          return `${this.siteSettings.community_topic_above_suggested_code}`;
-        }
-        if (placement === "post-bottom") {
-          return `${this.siteSettings.community_post_bottom_code}`;
-        }
+    } else {
+      if (placement === "topic-list-top") {
+        return `${this.siteSettings.community_topic_list_top_code}`;
+      }
+      if (placement === "topic-above-post-stream") {
+        return `${this.siteSettings.community_topic_above_post_stream_code}`;
+      }
+      if (placement === "topic-above-suggested") {
+        return `${this.siteSettings.community_topic_above_suggested_code}`;
+      }
+      if (placement === "post-bottom") {
+        return `${this.siteSettings.community_post_bottom_code}`;
       }
     }
   },
@@ -401,16 +391,16 @@ export default AdComponent.extend({
       return;
     }
 
-    let ad = slot.ad,
+    let ad = '/' + 'dfpNetwork' + '/' + slot.ad,
       categorySlug = this.get("currentCategorySlug");
 
     if (this.get("loadedGoogletag")) {
       //console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
-      // window.googletag.cmd.push(() => {
-      //   ad.setTargeting("discourse-category", categorySlug || "0");
-      //   window.googletag.pubads().refresh([ad]);
-      // });
+      window.googletag.cmd.push(() => {
+        ad.setTargeting("discourse-category", categorySlug || "0");
+        window.googletag.pubads().refresh([ad]);
+      });
 
       //todo: create refresh code
     }

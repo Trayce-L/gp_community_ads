@@ -80,5 +80,6 @@ extend_content_security_policy(
                   'http://c.amazon-adsystem.com/',
                   'https://securepubads.g.doubleclick.net/',
                   'https://adservice.google.com/',
+                  'https://cdn.ampproject.org/',
                   '\'unsafe-inline\''],
 )
