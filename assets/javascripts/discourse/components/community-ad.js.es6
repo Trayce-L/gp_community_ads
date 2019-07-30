@@ -381,12 +381,10 @@ export default AdComponent.extend({
     if (this.get("loadedGoogletag")) {
       //console.log(`refresh(${this.get("divId")}) from updated()`);
       this.set("lastAdRefresh", new Date());
-      if(this.get('divId_dc')) {
-        window.googletag.cmd.push(() => {
-          //ad.setTargeting("discourse-category", categorySlug || "0");
-          window.googletag.pubads().refresh();
-        });
-      }
+      window.googletag.cmd.push(() => {
+        //ad.setTargeting("discourse-category", categorySlug || "0");
+        window.googletag.pubads().refresh();
+      });
     }
   },
 
