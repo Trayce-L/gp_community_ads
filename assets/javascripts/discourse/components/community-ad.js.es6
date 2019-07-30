@@ -6,6 +6,18 @@ import {
 import loadScript from "discourse/lib/load-script";
 const _loaded = {};
 const _loading = {};
+const TopicRoute = require("discourse/routes/topic").default;
+
+TopicRoute.reopen({
+  activate: function() {
+    this._super();
+    Em.run.next(function() {
+      window.googletag.cmd.push(() => {
+        window.googletag.pubads().refresh();
+      });
+    });
+  }
+});
 
 let _communityloaded = false,
   _bidloaded = false,
