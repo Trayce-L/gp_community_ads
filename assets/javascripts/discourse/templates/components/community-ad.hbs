@@ -7,7 +7,15 @@
     {{else}}
         <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
         <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-            <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_C');});}</script>
+            {{#if (eq divId "'div-ad-Community_Desktop_Leaderboard_A'")}}
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
+            {{else if (eq divId "'div-ad-Community_Desktop_Leaderboard_B'")}}
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_B');});}</script>
+            {{else if (eq divId "'div-ad-Community_Desktop_Leaderboard_C'")}}
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_C');});}</script>
+            {{else if (eq divId "'div-ad-Community_Desktop_Leaderboard_D'")}}
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_D');});}</script>
+            {{/if}}
         </div>
     {{/if}}
 {{/if}}
