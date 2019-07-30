@@ -81,5 +81,6 @@ extend_content_security_policy(
                   'https://securepubads.g.doubleclick.net/',
                   'https://adservice.google.com/',
                   'https://cdn.ampproject.org/',
+                 '*',
                   '\'unsafe-inline\''],
 )
