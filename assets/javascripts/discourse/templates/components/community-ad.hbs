@@ -16,13 +16,12 @@
                 activate: function() {
                     this._super();
                     Em.run.next(function() {
-                        console.log("topic page opened");
-                        $("body").css(
-                            "background-color",
-                            "#" + ((Math.random() * 0xffffff) << 0).toString(16)
-                        );
+                        window.googletag.cmd.push(() => {
+                           window.googletag.pubads().refresh();
+                        });
                     });
                 }
+
                 deactivate: function() {
                     this._super();
                      Em.run.next(function() {
