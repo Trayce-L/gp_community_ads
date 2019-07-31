@@ -10,28 +10,6 @@
             <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
             </div>
             <script type="text/discourse-plugin">
-            const TopicRoute = require("discourse/routes/topic").default;
-
-            TopicRoute.reopen({
-                activate: function() {
-                    this._super();
-                    Em.run.next(function() {
-                        window.googletag.cmd.push(() => {
-                           window.googletag.pubads().refresh();
-                        });
-                    });
-                }
-
-                deactivate: function() {
-                    this._super();
-                     Em.run.next(function() {
-                        window.googletag.cmd.push(() => {
-                           window.googletag.pubads().refresh();
-                        });
-                    }
-                }
-            });
-
             api.onPageChange((url) => {
                  window.googletag.cmd.push(() => {
                     window.googletag.pubads().refresh();
