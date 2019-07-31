@@ -252,6 +252,7 @@ export default AdComponent.extend({
         return `${this.siteSettings.community_topic_list_top_code}`;
       }
       if (placement === "topic-above-post-stream") {
+        return `${this.siteSettings.community_topic_list_top_code}`;
         return `${this.siteSettings.community_topic_above_post_stream_code}`;
       }
       if (placement === "topic-above-suggested") {
