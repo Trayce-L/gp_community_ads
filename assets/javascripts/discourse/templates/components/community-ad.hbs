@@ -9,9 +9,9 @@
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
             <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
             </div>
-            <script type="text/discourse-plugin" version="0.8">
+            <script type="text/discourse-plugin">
             const TopicRoute = require("discourse/routes/topic").default;
-            
+
             TopicRoute.reopen({
                 deactivate: function() {
                     this._super();
