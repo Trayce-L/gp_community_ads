@@ -10,20 +10,13 @@
             <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
             </div>
             <script type="text/discourse-plugin" version="0.8">
-            api.modifyClass("component:topic-list-item", {
-              didInsertElement: function() {
-                window.googletag.cmd.push(() => {
+            TopicRoute.reopen({
+                deactivate: function() {
+                    this._super();
+                    window.googletag.cmd.push(() => {
                     window.googletag.pubads().refresh();
                 });
-              }
-            });
-
-            api.modifyClass("component:latest-topic-list-item", {
-              didInsertElement: function() {
-                window.googletag.cmd.push(() => {
-                    window.googletag.pubads().refresh();
-                });
-              }
+                }
             });
             </script>
         {{else if divId_db}}
