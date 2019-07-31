@@ -14,10 +14,11 @@
 
             TopicRoute.reopen({
                 deactivate: function() {
-                    this._super();
                     window.googletag.cmd.push(() => {
-                    window.googletag.pubads().refresh();
-                });
+                       window.googletag.pubads().refresh();
+                   });
+                    
+                    this._super();
                 }
             });
             </script>
