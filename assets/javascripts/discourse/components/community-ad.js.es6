@@ -289,25 +289,25 @@ export default AdComponent.extend({
   },
 
   @computed(
-    "publisherId",
+    //"publisherId",
     "showToTrustLevel",
-    "showToGroups",
+    //"showToGroups",
     //"showAfterPost",
-    "showOnCurrentPage"
+    //"showOnCurrentPage"
   )
   showAd(
-    publisherId,
+    //publisherId,
     showToTrustLevel,
-    showToGroups,
+    //showToGroups,
     //showAfterPost,
-    showOnCurrentPage
+    //showOnCurrentPage
   ) {
     return (
-      publisherId &&
-      showToTrustLevel &&
-      showToGroups &&
+      //publisherId &&
+      showToTrustLevel
+      //showToGroups &&
       //showAfterPost &&
-      showOnCurrentPage
+      //showOnCurrentPage
     );
   },
 
@@ -330,9 +330,9 @@ export default AdComponent.extend({
 
   @on("didInsertElement")
   _initGoogleDFP() {
-    // if (!this.get("showAd")) {
-    //     return;
-    // }
+    if (!this.get("showAd")) {
+        return;
+    }
 
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
@@ -353,9 +353,9 @@ export default AdComponent.extend({
   willRender() {
     this._super(...arguments);
 
-    // if (!this.get("showAd")) {
-    //     return;
-    // }
+    if (!this.get("showAd")) {
+        return;
+    }
 
     let size = getWidthAndHeight(
       this.get("placement"),
