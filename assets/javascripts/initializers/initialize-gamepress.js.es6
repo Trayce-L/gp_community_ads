@@ -1,5 +1,5 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
-const TopicRoute = require("discourse/routes/topic").default;
+import TopicRoute from 'discourse/routes/topic';
 
 export default {
   name: "initialize-gamepress",
