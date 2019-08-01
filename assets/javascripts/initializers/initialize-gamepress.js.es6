@@ -19,5 +19,11 @@ export default {
         });
       }
     });
+
+    api.onPageChange(url => {
+      window.googletag.cmd.push(() => {
+        window.googletag.pubads().refresh();
+      });
+    });
   }
 };
