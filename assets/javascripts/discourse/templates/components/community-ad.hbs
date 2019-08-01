@@ -1,12 +1,7 @@
 {{#if showAd}}
     {{#if divId_da}}
         {{#if isMobileDevice}}
-            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-                <script>if(detectWidth() < 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_A');});}</script>
-            </div>
-            <script type="text/discourse-plugin">
-            </script>
+
         {{else}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
@@ -17,10 +12,7 @@
         {{/if}}
     {{else if divId_db}}
         {{#if isMobileDevice}}
-            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-                <script>if(detectWidth() < 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_B');});}</script>
-            </div>
+
         {{else}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
@@ -29,19 +21,7 @@
         {{/if}}
     {{else if divId_dc}}
         {{#if isMobileDevice}}
-            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-                <script>if(detectWidth() < 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_C');});}</script>
-            </div>
-            <script type="text/discourse-plugin">
-            api.onPageChange((url) => {
-                if (url) {
-                     window.googletag.cmd.push(() => {
-                        window.googletag.pubads().refresh();
-                    });
-                }
-            });
-        </script>
+
         {{else}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
@@ -59,10 +39,7 @@
         {{/if}}
     {{else if divId_dd}}
         {{#if isMobileDevice}}
-            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-                <script>if(detectWidth() < 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_D');});}</script>
-            </div>
+
         {{else}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>

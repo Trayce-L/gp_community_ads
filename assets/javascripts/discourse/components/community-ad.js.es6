@@ -129,9 +129,6 @@ function getWidthAndHeight(placement, settings, isMobile) {
 }
 
 function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
-  // if (!settings.dfp_publisher_id) {
-  //     return;
-  // }
 
   if (ads[divId]) {
     return ads[divId];
@@ -175,40 +172,8 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
 function destroySlot(divId) {
   if (ads[divId]) {
     //todo: deleteion code
-    //window.googletag.destroySlots([ads[divId].ad]);
     delete ads[divId];
   }
-}
-
-function loadCommunity() {
-  /**
-   * Refer to this article for help:
-   * https://support.google.com/admanager/answer/4578089?hl=en
-   */
-
-  return new Ember.RSVP.Promise(function(resolve) {
-    _communityloaded = false;
-    _bidloaded = false;
-
-    if(_bidloaded)
-    {
-      return resolve();
-    }
-
-    // If we already loaded this url
-    // var communitySrc = ("https:" === document.location.protocol ? "https:" : "https:") +
-    //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
-    var bidSrc = ("https:" === document.location.protocol ? "https:" : "https:") +
-      "//gamepress.gg/prebid/prebidjscommunity.js";
-
-    // loadScript(communitySrc, {scriptTag: true}).then(function () {
-    //   _communityloaded = true;
-    // });
-
-    loadScript(bidSrc, {scriptTag: true}).then(function () {
-      _bidloaded = true;
-    });
-  });
 }
 
 export default AdComponent.extend({
@@ -353,48 +318,14 @@ export default AdComponent.extend({
     );
   },
 
-  // @computed("postNumber")
-  // showAfterPost(postNumber) {
-  //   if (!postNumber) {
-  //     return true;
-  //   }
-  //
-  //   return this.isNthPost(parseInt(this.siteSettings.dfp_nth_post_code));
-  // },
-
   // 3 second delay between calls to refresh ads in a component.
   // Ember often calls updated() more than once, and *sometimes*
   // updated() is called after _initGoogleDFP().
   shouldRefreshAd() {
-    const lastAdRefresh = this.get("lastAdRefresh");
-    if (!lastAdRefresh) {
-      return true;
-    }
-    return new Date() - lastAdRefresh > 3000;
   },
 
   @on("didUpdate")
   updated() {
-    if (this.get("listLoading") || !this.shouldRefreshAd()) {
-      return;
-    }
-
-    // let slot = ads[this.get("divId")];
-    // if (!(slot && slot.ad)) {
-    //   return;
-    // }
-
-    //let ad = '/' + 'dfpNetwork' + '/' + slot.ad,
-      //categorySlug = this.get("currentCategorySlug");
-
-    if (this.get("loadedGoogletag")) {
-      //console.log(`refresh(${this.get("divId")}) from updated()`);
-      this.set("lastAdRefresh", new Date());
-      window.googletag.cmd.push(() => {
-        //ad.setTargeting("discourse-category", categorySlug || "0");
-        window.googletag.pubads().refresh();
-      });
-    }
   },
 
   @on("didInsertElement")
@@ -403,9 +334,6 @@ export default AdComponent.extend({
     //     return;
     // }
 
-    //window.googletag = window.googletag || { cmd: [] };
-
-    //loadCommunity().then(function () {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
       this.get("divId_da");
