@@ -429,24 +429,21 @@ carbonads_plugin:
     default: false
 
 community_plugin:
-  community_id:
-    client: true
-    default: "1"
   community_trust:
     client: true
     default: 2
     enum: "TrustLevelSetting"
   community_topic_list_top_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Desktop_Leaderboard_A"
     textarea: true
   community_post_bottom_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Desktop_Leaderboard_B"
     textarea: true
   community_topic_above_post_stream_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Desktop_Leaderboard_C"
     textarea: true
   community_topic_above_suggested_code:
     client: true
@@ -454,25 +451,25 @@ community_plugin:
     textarea: true
   community_mobile_topic_list_top_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Mobile_300x250_A"
     textarea: true
   community_mobile_post_bottom_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Mobile_300x250_B"
     textarea: true
   community_mobile_topic_above_post_stream_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Mobile_300x250_C"
     textarea: true
   community_mobile_topic_above_suggested_code:
     client: true
     default: ""
     textarea: true
-  community_mobile_320x50_a:
-    client: true
-    default: ""
-    textarea: true
-  community_mobile_320x50_b:
-    client: true
-    default: ""
-    textarea: true
+#  community_mobile_320x50_a:
+#    client: true
+#    default: ""
+#    textarea: true
+#  community_mobile_320x50_b:
+#    client: true
+#    default: ""
+#    textarea: true

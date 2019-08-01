@@ -3,28 +3,8 @@ import {
   default as computed,
   on
 } from "ember-addons/ember-computed-decorators";
-import loadScript from "discourse/lib/load-script";
-const _loaded = {};
-const _loading = {};
 
-let _communityloaded = false,
-  _bidloaded = false,
-  ads = {},
-  nextSlotNum = 1;
-
-function getNextSlotNum() {
-  return nextSlotNum++;
-}
-
-function splitWidthInt(value) {
-  var str = value.substring(0, 3);
-  return str.trim();
-}
-
-function splitHeightInt(value) {
-  var str = value.substring(4, 7);
-  return str.trim();
-}
+let ads = {};
 
 // This creates an array for the values of the custom targeting key
 function valueParse(value) {
@@ -134,36 +114,10 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     return ads[divId];
   }
 
-  let ad, config, publisherId;
+  let ad;
   let size = getWidthAndHeight(placement, settings, isMobile);
 
-  if (isMobile) {
-    //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
-    config = MOBILE_SETTINGS[placement];
-  } else {
-    //publisherId = settings.dfp_publisher_id;
-    config = DESKTOP_SETTINGS[placement];
-  }
-
-  // ad = window.googletag.defineSlot(
-  //   /*"/" + publisherId + */"/" + settings[config.code],
-  //   [size.width, size.height],
-  //   divId
-  // );
-
   ad = divId;
-
-  // custom_targeting(
-  //     keyParse(settings[config.targeting_keys]),
-  //     keyParse(settings[config.targeting_values]),
-  //     ad
-  // );
-  //
-  // if (categoryTarget) {
-  //     ad.setTargeting("discourse-category", categoryTarget);
-  // }
-
-  //ad.addService(window.googletag.pubads());
 
   ads[divId] = {ad: ad, width: size.width, height: size.height};
   return ads[divId];
@@ -334,20 +288,21 @@ export default AdComponent.extend({
         return;
     }
 
-      this.set("loadedGoogletag", true);
-      this.set("lastAdRefresh", new Date());
-      this.get("divId_da");
-      this.get("divId_db");
-      this.get("divId_dc");
-      this.get("divId_dd");
-      this.get('isMobileDevice');
-        let slot = defineSlot(
-          this.get("divId"),
-          this.get("placement"),
-          this.siteSettings,
-          this.site.mobileView,
-          this.get("currentCategorySlug") || "0"
-        );
+    this.set("loadedGoogletag", true);
+    this.set("lastAdRefresh", new Date());
+    this.get("divId_da");
+    this.get("divId_db");
+    this.get("divId_dc");
+    this.get("divId_dd");
+    this.get('isMobileDevice');
+
+    let slot = defineSlot(
+      this.get("divId"),
+      this.get("placement"),
+      this.siteSettings,
+      this.site.mobileView,
+      this.get("currentCategorySlug") || "0"
+    );
   },
 
   willRender() {
