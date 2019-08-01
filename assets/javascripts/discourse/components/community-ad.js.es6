@@ -248,6 +248,13 @@ export default AdComponent.extend({
       trustLevel && trustLevel > this.siteSettings.community_trust
     );
   },
+  
+  shouldRefreshAd() {
+  },
+
+  @on("didUpdate")
+  updated() {
+  },
 
   @on("didInsertElement")
   _initGoogleDFP() {
