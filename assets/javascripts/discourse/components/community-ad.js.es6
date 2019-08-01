@@ -222,23 +222,23 @@ export default AdComponent.extend({
   @computed(
     //"publisherId",
     "showToTrustLevel",
-    //"showToGroups",
+    "showToGroups",
     //"showAfterPost",
-    //"showOnCurrentPage"
+    "showOnCurrentPage"
   )
   showAd(
     //publisherId,
     showToTrustLevel,
-    //showToGroups,
+    showToGroups,
     //showAfterPost,
-    //showOnCurrentPage
+    showOnCurrentPage
   ) {
     return (
       //publisherId &&
-      showToTrustLevel
-      //showToGroups &&
+      showToTrustLevel &&
+      showToGroups &&
       //showAfterPost &&
-      //showOnCurrentPage
+      showOnCurrentPage
     );
   },
 
