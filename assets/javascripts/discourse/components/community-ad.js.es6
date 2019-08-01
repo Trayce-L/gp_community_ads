@@ -193,38 +193,22 @@ export default AdComponent.extend({
 
   @computed("site.mobileView")
   isMobileDevice(isMobile) {
-    if (isMobile) {
-      return true;
-    }
-
-    return false;
+    return isMobile ? true : false;
   },
 
   @computed("placement")
   divId_dc(placement) {
-    if (placement === "topic-above-post-stream") {
-      return true;
-    }
-
-    return false;
+    return placement === "topic-above-post-stream";
   },
 
   @computed("placement")
   divId_dd(placement) {
-    if (placement === "topic-above-suggested") {
-      return true;
-    }
-
-    return false;
+    return placement === "topic-above-suggested";
   },
 
   @computed("placement")
   divId_db(placement) {
-    if (placement === "post-bottom") {
-      return true;
-    }
-
-    return false;
+    return placement === "post-bottom";
   },
 
   @computed("placement", "showAd")

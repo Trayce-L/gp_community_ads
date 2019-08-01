@@ -1,7 +1,12 @@
 {{#if showAd}}
     {{#if divId_da}}
         {{#if isMobileDevice}}
-
+            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
+            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
+                <script>if(detectWidth() < 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_A');});}</script>
+            </div>
+            <script type="text/discourse-plugin">
+            </script>
         {{else}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
