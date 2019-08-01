@@ -30,7 +30,7 @@
             </div>
             <script type="text/discourse-plugin">
             api.onPageChange((url) => {
-                if (url.includes('/c/redirect-politifora')) {
+                if (url) {
                      window.googletag.cmd.push(() => {
                         window.googletag.pubads().refresh();
                     });
