@@ -272,6 +272,15 @@ export default AdComponent.extend({
     return false;
   },
 
+  @computed("site.mobileView")
+  isMobile(isMobile) {
+    if (isMobile) {
+      return true;
+    }
+
+    return false;
+  },
+
   @computed("placement")
   divId_dc(placement) {
     if (placement === "topic-above-post-stream") {
@@ -399,11 +408,11 @@ export default AdComponent.extend({
     //loadCommunity().then(function () {
       this.set("loadedGoogletag", true);
       this.set("lastAdRefresh", new Date());
-      //window.googletag.cmd.push(() => {
       this.get("divId_da");
       this.get("divId_db");
       this.get("divId_dc");
       this.get("divId_dd");
+      this.get('isMobile');
         let slot = defineSlot(
           this.get("divId"),
           this.get("placement"),
@@ -411,15 +420,6 @@ export default AdComponent.extend({
           this.site.mobileView,
           this.get("currentCategorySlug") || "0"
         );
-        //if (slot && slot.ad) {
-          // Display has to be called before refresh
-          // and after the slot div is in the page.
-          //window.googletag.display(this.get("divId"));
-          //= console.log(`refresh(${this.get("divId")}) from _initGoogleDFP()`);
-          //window.googletag.pubads().refresh([slot.ad]);
-        //}
-      //});
-    //});
   },
 
   willRender() {
