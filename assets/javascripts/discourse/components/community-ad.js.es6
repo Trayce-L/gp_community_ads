@@ -142,9 +142,9 @@ export default AdComponent.extend({
     "siteSettings.community_id",
     "site.mobileView"
   )
-  publisherId(globalId, mobileId, isMobile) {
-    return true;
-  },
+  // publisherId(globalId, mobileId, isMobile) {
+  //   return true;
+  // },
 
   @computed("placement", "postNumber", "site.mobileView")
   divId(placement, postNumber, isMobile) {
@@ -189,22 +189,38 @@ export default AdComponent.extend({
 
   @computed("site.mobileView")
   isMobileDevice(isMobile) {
-    return isMobile ? true : false;
+    if (isMobile) {
+      return true;
+    }
+
+    return false;
   },
 
   @computed("placement")
   divId_dc(placement) {
-    return placement === "topic-above-post-stream";
+    if (placement === "topic-above-post-stream") {
+      return true;
+    }
+
+    return false;
   },
 
   @computed("placement")
   divId_dd(placement) {
-    return placement === "topic-above-suggested";
+    if (placement === "topic-above-suggested") {
+      return true;
+    }
+
+    return false;
   },
 
   @computed("placement")
   divId_db(placement) {
-    return placement === "post-bottom";
+    if (placement === "post-bottom") {
+      return true;
+    }
+
+    return false;
   },
 
   @computed("placement", "showAd")
