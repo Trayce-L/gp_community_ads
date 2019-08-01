@@ -1,18 +1,34 @@
 {{#if showAd}}
-    {{#if isMobile}}
-        {{#if divId_da}}
+    {{#if divId_da}}
+        {{#if isMobile}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
                 <script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_A');});}</script>
             </div>
             <script type="text/discourse-plugin">
             </script>
-        {{else if divId_db}}
+        {{else}}
+            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
+            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
+            </div>
+            <script type="text/discourse-plugin">
+            </script>
+        {{/if}}
+    {{else if divId_db}}
+        {{#if isMobile}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
                 <script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_B');});}</script>
             </div>
-        {{else if divId_dc}}
+        {{else}}
+            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
+            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_B');});}</script>
+            </div>
+        {{/if}}
+    {{else if divId_dc}}
+        {{#if isMobile}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
                 <script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_C');});}</script>
@@ -25,30 +41,11 @@
                     });
                 }
             });
-            </script>
-        {{else if divId_dd}}
+        </script>
+        {{else}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-                <script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_D');});}</script>
-            </div>
-        {{/if}}
-    {{else}}
-        {{#if divId_da}}
-            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-            <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_A');});}</script>
-            </div>
-            <script type="text/discourse-plugin">
-            </script>
-        {{else if divId_db}}
-            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-            <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_B');});}</script>
-            </div>
-        {{else if divId_dc}}
-            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
-            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-            <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_C');});}</script>
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_C');});}</script>
             </div>
             <script type="text/discourse-plugin">
             api.onPageChange((url) => {
@@ -59,10 +56,17 @@
                 }
             });
             </script>
-        {{else if divId_dd}}
+        {{/if}}
+    {{else if divId_dd}}
+        {{#if isMobile}}
             <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
             <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
-            <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_D');});}</script>
+                <script>if(detectWidth() <= 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Mobile_300x250_D');});}</script>
+            </div>
+        {{else}}
+            <div class="community-ad-label"><h2>{{i18n 'adplugin.advertisement_label'}}</h2></div>
+            <div id={{divId}} style={{adWrapperStyle}} class="dfp-ad-unit" align=center>
+                <script>if(detectWidth() > 980){googletag.cmd.push(function() {googletag.display('div-ad-Community_Desktop_Leaderboard_D');});}</script>
             </div>
         {{/if}}
     {{/if}}
