@@ -133,6 +133,9 @@ function destroySlot(divId) {
 export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
   classNames: ["community-ad"],
+  loadedGoogletag: false,
+  refreshOnChange: null,
+  lastAdRefresh: null,
 
   @computed(
     "siteSettings.community_id",
@@ -248,7 +251,7 @@ export default AdComponent.extend({
       trustLevel && trustLevel > this.siteSettings.community_trust
     );
   },
-  
+
   shouldRefreshAd() {
   },
 
