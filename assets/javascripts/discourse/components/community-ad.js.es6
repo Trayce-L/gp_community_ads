@@ -137,18 +137,18 @@ export default AdComponent.extend({
   refreshOnChange: null,
   lastAdRefresh: null,
 
-  @computed(
-    "siteSettings.community_id",
-    "siteSettings.community_id",
-    "site.mobileView"
-  )
-  publisherId(globalId, mobileId, isMobile) {
-    if (isMobile) {
-      return mobileId || globalId;
-    } else {
-      return globalId;
-    }
-  },
+  // @computed(
+  //   "siteSettings.community_id",
+  //   "siteSettings.community_id",
+  //   "site.mobileView"
+  // )
+  // publisherId(globalId, mobileId, isMobile) {
+  //   if (isMobile) {
+  //     return mobileId || globalId;
+  //   } else {
+  //     return globalId;
+  //   }
+  // },
 
   @computed("placement", "postNumber", "site.mobileView")
   divId(placement, postNumber, isMobile) {
