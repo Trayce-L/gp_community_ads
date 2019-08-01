@@ -273,7 +273,7 @@ export default AdComponent.extend({
   },
 
   @computed("site.mobileView")
-  isMobile(isMobile) {
+  isMobileDevice(isMobile) {
     if (isMobile) {
       return true;
     }
@@ -412,7 +412,7 @@ export default AdComponent.extend({
       this.get("divId_db");
       this.get("divId_dc");
       this.get("divId_dd");
-      this.get('isMobile');
+      this.get('isMobileDevice');
         let slot = defineSlot(
           this.get("divId"),
           this.get("placement"),
