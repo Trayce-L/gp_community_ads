@@ -133,22 +133,15 @@ function destroySlot(divId) {
 export default AdComponent.extend({
   classNameBindings: ["adUnitClass"],
   classNames: ["community-ad"],
-  loadedGoogletag: false,
-  refreshOnChange: null,
-  lastAdRefresh: null,
 
-  // @computed(
-  //   "siteSettings.community_id",
-  //   "siteSettings.community_id",
-  //   "site.mobileView"
-  // )
-  // publisherId(globalId, mobileId, isMobile) {
-  //   if (isMobile) {
-  //     return mobileId || globalId;
-  //   } else {
-  //     return globalId;
-  //   }
-  // },
+  @computed(
+    "siteSettings.community_id",
+    "siteSettings.community_id",
+    "site.mobileView"
+  )
+  publisherId(globalId, mobileId, isMobile) {
+    return true;
+  },
 
   @computed("placement", "postNumber", "site.mobileView")
   divId(placement, postNumber, isMobile) {
@@ -254,16 +247,6 @@ export default AdComponent.extend({
     return !(
       trustLevel && trustLevel > this.siteSettings.community_trust
     );
-  },
-
-  // 3 second delay between calls to refresh ads in a component.
-  // Ember often calls updated() more than once, and *sometimes*
-  // updated() is called after _initGoogleDFP().
-  shouldRefreshAd() {
-  },
-
-  @on("didUpdate")
-  updated() {
   },
 
   @on("didInsertElement")
