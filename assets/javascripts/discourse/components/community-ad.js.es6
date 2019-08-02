@@ -147,7 +147,7 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   //   [size.width, size.height],
   //   divId
   // );
-  
+
   ad = divId;
 
   ads[divId] = {ad: ad, width: size.width, height: size.height};
