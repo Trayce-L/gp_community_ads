@@ -110,6 +110,37 @@ const MOBILE_SETTINGS = {
   }
 };
 
+function loadCommunity() {
+  /**
+   * Refer to this article for help:
+   * https://support.google.com/admanager/answer/4578089?hl=en
+   */
+
+  return new Ember.RSVP.Promise(function(resolve) {
+    _communityloaded = false;
+    _bidloaded = false;
+
+    if(_bidloaded)
+    {
+      return resolve();
+    }
+
+    // If we already loaded this url
+    // var communitySrc = ("https:" === document.location.protocol ? "https:" : "https:") +
+    //   "//gist.githubusercontent.com/ascendeum/4f60bbbc7e886e7ac156a95c466894c8/raw/a639ea0fc9259e96c2d5e79e08d7569b206a20f3/header.html";
+    var bidSrc = ("https:" === document.location.protocol ? "https:" : "https:") +
+      "//gamepress.gg/prebid/prebidjscommunity.js";
+
+    // loadScript(communitySrc, {scriptTag: true}).then(function () {
+    //   _communityloaded = true;
+    // });
+
+    loadScript(bidSrc, {scriptTag: true}).then(function () {
+      _bidloaded = true;
+    });
+  });
+}
+
 function getWidthAndHeight(placement, settings, isMobile) {
   let config;
 
@@ -149,6 +180,18 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
   // );
 
   ad = divId;
+
+  // custom_targeting(
+  //     keyParse(settings[config.targeting_keys]),
+  //     keyParse(settings[config.targeting_values]),
+  //     ad
+  // );
+  //
+  // if (categoryTarget) {
+  //     ad.setTargeting("discourse-category", categoryTarget);
+  // }
+
+  //ad.addService(window.googletag.pubads());
 
   ads[divId] = {ad: ad, width: size.width, height: size.height};
   return ads[divId];
@@ -300,10 +343,35 @@ export default AdComponent.extend({
   },
 
   shouldRefreshAd() {
+    const lastAdRefresh = this.get("lastAdRefresh");
+    if (!lastAdRefresh) {
+      return true;
+    }
+    return new Date() - lastAdRefresh > 3000;
   },
 
   @on("didUpdate")
   updated() {
+    if (this.get("listLoading") || !this.shouldRefreshAd()) {
+      return;
+    }
+
+    // let slot = ads[this.get("divId")];
+    // if (!(slot && slot.ad)) {
+    //   return;
+    // }
+
+    //let ad = '/' + 'dfpNetwork' + '/' + slot.ad,
+    //categorySlug = this.get("currentCategorySlug");
+
+    if (this.get("loadedGoogletag")) {
+      //console.log(`refresh(${this.get("divId")}) from updated()`);
+      this.set("lastAdRefresh", new Date());
+      window.googletag.cmd.push(() => {
+        //ad.setTargeting("discourse-category", categorySlug || "0");
+        window.googletag.pubads().refresh();
+      });
+    }
   },
 
   @on("didInsertElement")
