@@ -439,7 +439,7 @@ community_plugin:
     textarea: true
   community_post_bottom_code:
     client: true
-    default: "div-ad-Community_Desktop_Leaderboard_B"
+    default: ""
     textarea: true
   community_topic_above_post_stream_code:
     client: true
@@ -447,7 +447,7 @@ community_plugin:
     textarea: true
   community_topic_above_suggested_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Desktop_Leaderboard_D"
     textarea: true
   community_mobile_topic_list_top_code:
     client: true
@@ -455,7 +455,7 @@ community_plugin:
     textarea: true
   community_mobile_post_bottom_code:
     client: true
-    default: "div-ad-Community_Mobile_300x250_B"
+    default: ""
     textarea: true
   community_mobile_topic_above_post_stream_code:
     client: true
@@ -463,7 +463,7 @@ community_plugin:
     textarea: true
   community_mobile_topic_above_suggested_code:
     client: true
-    default: ""
+    default: "div-ad-Community_Mobile_300x250_D"
     textarea: true
 #  community_mobile_320x50_a:
 #    client: true
