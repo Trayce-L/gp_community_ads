@@ -4,7 +4,24 @@ import {
   on
 } from "ember-addons/ember-computed-decorators";
 
-let ads = {};
+let _communityloaded = false,
+  _bidloaded = false,
+  ads = {},
+  nextSlotNum = 1;
+
+function getNextSlotNum() {
+  return nextSlotNum++;
+}
+
+function splitWidthInt(value) {
+  var str = value.substring(0, 3);
+  return str.trim();
+}
+
+function splitHeightInt(value) {
+  var str = value.substring(4, 7);
+  return str.trim();
+}
 
 // This creates an array for the values of the custom targeting key
 function valueParse(value) {
@@ -114,9 +131,23 @@ function defineSlot(divId, placement, settings, isMobile, categoryTarget) {
     return ads[divId];
   }
 
-  let ad;
+  let ad, config, publisherId;
   let size = getWidthAndHeight(placement, settings, isMobile);
 
+  if (isMobile) {
+    //publisherId = settings.dfp_publisher_id_mobile || settings.dfp_publisher_id;
+    config = MOBILE_SETTINGS[placement];
+  } else {
+    //publisherId = settings.dfp_publisher_id;
+    config = DESKTOP_SETTINGS[placement];
+  }
+
+  // ad = window.googletag.defineSlot(
+  //   /*"/" + publisherId + */"/" + settings[config.code],
+  //   [size.width, size.height],
+  //   divId
+  // );
+  
   ad = divId;
 
   ads[divId] = {ad: ad, width: size.width, height: size.height};
