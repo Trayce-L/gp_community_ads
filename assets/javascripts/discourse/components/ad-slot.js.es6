@@ -56,7 +56,7 @@ const adConfig = Ember.Object.create({
   },
   "community-ad": {
     settingPrefix: "community", // settings follow naming convention
-    enabledSetting: "community_id",
+    enabledSetting: "community_topic_list_top_code",
     //nthPost: "",
     desktop: {
       "topic-list-top": "community_topic_list_top_code",
